@@ -1,0 +1,7 @@
+pages\heroku\JavaScriptAlertsPageTest.class
+pages\onliner\OnlinerHomePageTest.class
+pages\heroku\FileUploadPageTest.class
+pages\heroku\FramesPageTest.class
+pages\CommonConditions.class
+pages\heroku\ContextMenuPageTest.class
+pages\heroku\DynamicControlsPageTest.class
