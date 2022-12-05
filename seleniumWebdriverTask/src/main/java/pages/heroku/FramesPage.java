@@ -2,12 +2,14 @@ package pages.heroku;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
-import utils.EnvironmentConfig;
+import pages.AbstractPage;
+import utils.TestProperties;
+import waits.Waits;
 
-public class FramesPage {
+public class FramesPage extends AbstractPage {
 
     protected WebDriver driver;
-    private static final String URL = EnvironmentConfig.herokuAppUrl + "frames";
+    private static final String URL = TestProperties.getHerokuAppUrl() + "frames";
     private static final String FRAME_NAME = "mce_0_ifr";
     private static final By iFrameLinkLocator = By.xpath("//a[text()='iFrame']");
     private static final By inputTextLocator = By.xpath("//body[@id='tinymce']/p");
@@ -23,7 +25,7 @@ public class FramesPage {
     }
 
     public FramesPage clickIFrameLink() {
-        driver.findElement(iFrameLinkLocator).click();
+        getWebElement(driver, iFrameLinkLocator).click();
         return this;
     }
 
@@ -33,12 +35,12 @@ public class FramesPage {
     }
 
     public FramesPage inputDataIntoFrame(String text) {
-        driver.findElement(inputTextLocator).sendKeys(text);
+        getWebElement(driver, inputTextLocator).sendKeys(text);
         return this;
     }
 
     public void clickAlignCenterButton() {
-        driver.findElement(alignCenterButtonLocator).click();
+        getWebElement(driver, alignCenterButtonLocator).click();
     }
 
     public FramesPage switchToDefaultFrame() {
@@ -47,6 +49,6 @@ public class FramesPage {
     }
 
     public boolean isAlignCenterButtonEnabled() {
-        return driver.findElement(alignCenterButtonLocator).isEnabled();
+        return Waits.waitPresenceOfElementLocated(driver, alignCenterButtonLocator).isEnabled();
     }
 }

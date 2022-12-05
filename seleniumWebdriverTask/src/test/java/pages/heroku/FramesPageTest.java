@@ -1,5 +1,6 @@
 package pages.heroku;
 
+import org.testng.Assert;
 import org.testng.annotations.Test;
 import pages.CommonConditions;
 import utils.IConstants;
@@ -17,6 +18,6 @@ public class FramesPageTest extends CommonConditions {
             .inputDataIntoFrame(IConstants.randomText)
             .switchToDefaultFrame()
             .clickAlignCenterButton();
-        assertThat("Align center button isn`t enabled", framesPage.isAlignCenterButtonEnabled());
+        Assert.assertTrue(framesPage.isAlignCenterButtonEnabled());
     }
 }

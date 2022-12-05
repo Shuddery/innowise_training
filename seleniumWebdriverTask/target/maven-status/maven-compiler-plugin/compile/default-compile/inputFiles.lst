@@ -1,10 +1,11 @@
-C:\Users\bobr_\IdeaProjects\login\src\main\java\waits\Waits.java
-C:\Users\bobr_\IdeaProjects\login\src\main\java\pages\heroku\ContextMenuPage.java
-C:\Users\bobr_\IdeaProjects\login\src\main\java\pages\onliner\OnlinerHomePage.java
-C:\Users\bobr_\IdeaProjects\login\src\main\java\pages\heroku\DynamicControlsPage.java
-C:\Users\bobr_\IdeaProjects\login\src\main\java\pages\heroku\FileUploadPage.java
-C:\Users\bobr_\IdeaProjects\login\src\main\java\pages\heroku\FramesPage.java
-C:\Users\bobr_\IdeaProjects\login\src\main\java\utils\EnvironmentConfig.java
-C:\Users\bobr_\IdeaProjects\login\src\main\java\pages\heroku\JavaScriptAlertsPage.java
-C:\Users\bobr_\IdeaProjects\login\src\main\java\utils\IConstants.java
-C:\Users\bobr_\IdeaProjects\login\src\main\java\driver\DriverSingleton.java
+C:\Users\bobr_\OneDrive\Рабочий стол\innowise_training\seleniumWebdriverTask\src\main\java\driver\DriverSingleton.java
+C:\Users\bobr_\OneDrive\Рабочий стол\innowise_training\seleniumWebdriverTask\src\main\java\pages\heroku\ContextMenuPage.java
+C:\Users\bobr_\OneDrive\Рабочий стол\innowise_training\seleniumWebdriverTask\src\main\java\pages\heroku\FramesPage.java
+C:\Users\bobr_\OneDrive\Рабочий стол\innowise_training\seleniumWebdriverTask\src\main\java\pages\heroku\FileUploadPage.java
+C:\Users\bobr_\OneDrive\Рабочий стол\innowise_training\seleniumWebdriverTask\src\main\java\utils\IConstants.java
+C:\Users\bobr_\OneDrive\Рабочий стол\innowise_training\seleniumWebdriverTask\src\main\java\utils\TestProperties.java
+C:\Users\bobr_\OneDrive\Рабочий стол\innowise_training\seleniumWebdriverTask\src\main\java\pages\heroku\DynamicControlsPage.java
+C:\Users\bobr_\OneDrive\Рабочий стол\innowise_training\seleniumWebdriverTask\src\main\java\pages\heroku\JavaScriptAlertsPage.java
+C:\Users\bobr_\OneDrive\Рабочий стол\innowise_training\seleniumWebdriverTask\src\main\java\waits\Waits.java
+C:\Users\bobr_\OneDrive\Рабочий стол\innowise_training\seleniumWebdriverTask\src\main\java\pages\onliner\OnlinerHomePage.java
+C:\Users\bobr_\OneDrive\Рабочий стол\innowise_training\seleniumWebdriverTask\src\main\java\pages\AbstractPage.java

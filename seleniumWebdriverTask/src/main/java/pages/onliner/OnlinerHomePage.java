@@ -3,13 +3,14 @@ package pages.onliner;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
-import utils.EnvironmentConfig;
+import pages.AbstractPage;
+import utils.TestProperties;
 import waits.Waits;
 
-public class OnlinerHomePage {
+public class OnlinerHomePage extends AbstractPage {
 
     protected WebDriver driver;
-    private static final String URL = "https://www.onliner.by/";
+    private static final String URL = TestProperties.getOnlinerUrl();
     private static final By searchFieldLocator = By.xpath("//input[contains(@class, 'fast-search')]");
     private static final By iFrameLocator = By.xpath("//iframe[@class='modal-iframe']");
     private static final By firstProductNameLocator = By.xpath("(//div[contains(@class, 'product__title')]/a)[1]");
@@ -27,12 +28,12 @@ public class OnlinerHomePage {
     }
 
     public OnlinerHomePage fillSearchField(String criteria) {
-        driver.findElement(searchFieldLocator).sendKeys(criteria);
+        getWebElement(driver, searchFieldLocator).sendKeys(criteria);
         return this;
     }
 
     public OnlinerHomePage switchToProductsFrame() {
-        driver.switchTo().frame(driver.findElement(iFrameLocator));
+        driver.switchTo().frame(getWebElement(driver, iFrameLocator));
         return this;
     }
 
@@ -41,21 +42,21 @@ public class OnlinerHomePage {
     }
 
     public OnlinerHomePage clearSearchFieldInFrame() {
-        driver.findElement(searchFieldInFrameLocator).clear();
+        getWebElement(driver, searchFieldInFrameLocator).clear();
         return this;
     }
 
     public OnlinerHomePage fillSearchFieldInFrame(String criteria) {
-        driver.findElement(searchFieldInFrameLocator).sendKeys(criteria);
+        getWebElement(driver, searchFieldInFrameLocator).sendKeys(criteria);
         return this;
     }
 
     public void clickOnFirstProduct() {
-        driver.findElement(firstProductNameLocator).click();
+        getWebElement(driver, firstProductNameLocator).click();
     }
 
     public String getCaptionOfFirstProduct() {
-        return driver.findElement(captionOfProductLocator).getText();
+         return getWebElement(driver, captionOfProductLocator).getText();
     }
 
     public OnlinerHomePage scrollToEndOfPage() {

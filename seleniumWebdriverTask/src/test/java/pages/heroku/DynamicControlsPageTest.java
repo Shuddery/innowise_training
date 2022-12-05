@@ -1,6 +1,7 @@
 package pages.heroku;
 
 import org.hamcrest.Matchers;
+import org.testng.Assert;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 import pages.CommonConditions;
@@ -38,12 +39,12 @@ public class DynamicControlsPageTest extends CommonConditions {
 
     @Test
     public void isCheckboxNotDisplayedAfterClickRemoveButtonTest() {
-        assertThat(isCheckboxDisplayed, Matchers.equalTo(false));
+        Assert.assertFalse(isCheckboxDisplayed);
     }
 
     @Test
     public void isInputFieldNotEnabledBeforeClickEnableButtonTest() {
-        assertThat(isInputFieldEnabledBeforeClickEnableButton, Matchers.equalTo(false));
+        Assert.assertFalse(isInputFieldEnabledBeforeClickEnableButton);
     }
 
     @Test
@@ -54,7 +55,6 @@ public class DynamicControlsPageTest extends CommonConditions {
 
     @Test
     public void isInputFieldEnabledAfterClickEnableButtonTest() {
-        assertThat("Input field isn`t enabled after click on enable button",
-            isInputFieldEnabledAfterClickEnableButton);
+        Assert.assertTrue(isInputFieldEnabledAfterClickEnableButton);
     }
 }

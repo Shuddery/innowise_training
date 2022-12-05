@@ -3,8 +3,8 @@
 <suite name="test" verbose="1" >
   <test name="All tests">
     <packages>
-      <package name="pages.heroku"/>
-      <package name="pages.onliner"/>
+      <package name="pages.heroku"></package>
+      <package name="pages.onliner"></package>
     </packages>
   </test>
 </suite>

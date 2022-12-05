@@ -2,122 +2,122 @@
 <testng-results ignored="0" total="12" passed="12" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2022-11-28T21:03:05 MSK" name="test" finished-at="2022-11-28T21:03:48 MSK" duration-ms="42950">
+  <suite started-at="2022-12-05T21:18:29 MSK" name="test" finished-at="2022-12-05T21:19:16 MSK" duration-ms="47403">
     <groups>
     </groups>
-    <test started-at="2022-11-28T21:03:05 MSK" name="All tests" finished-at="2022-11-28T21:03:48 MSK" duration-ms="42950">
+    <test started-at="2022-12-05T21:18:29 MSK" name="All tests" finished-at="2022-12-05T21:19:16 MSK" duration-ms="47403">
       <class name="pages.heroku.DynamicControlsPageTest">
-        <test-method is-config="true" signature="setUp()[pri:0, instance:pages.heroku.DynamicControlsPageTest@6b1274d2]" started-at="2022-11-28T21:03:32 MSK" name="setUp" finished-at="2022-11-28T21:03:33 MSK" duration-ms="1543" status="PASS">
+        <test-method is-config="true" signature="setUp()[pri:0, instance:pages.heroku.DynamicControlsPageTest@5a4aa2f2]" started-at="2022-12-05T21:19:00 MSK" name="setUp" finished-at="2022-12-05T21:19:01 MSK" duration-ms="1447" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUp -->
-        <test-method is-config="true" signature="navigateToDynamicControlsPageTest()[pri:0, instance:pages.heroku.DynamicControlsPageTest@6b1274d2]" started-at="2022-11-28T21:03:33 MSK" name="navigateToDynamicControlsPageTest" finished-at="2022-11-28T21:03:43 MSK" duration-ms="9047" status="PASS">
+        <test-method is-config="true" signature="navigateToDynamicControlsPageTest()[pri:0, instance:pages.heroku.DynamicControlsPageTest@5a4aa2f2]" started-at="2022-12-05T21:19:01 MSK" name="navigateToDynamicControlsPageTest" finished-at="2022-12-05T21:19:10 MSK" duration-ms="9242" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- navigateToDynamicControlsPageTest -->
-        <test-method signature="isInputFieldNotEnabledBeforeClickEnableButtonTest()[pri:0, instance:pages.heroku.DynamicControlsPageTest@6b1274d2]" started-at="2022-11-28T21:03:43 MSK" name="isInputFieldNotEnabledBeforeClickEnableButtonTest" finished-at="2022-11-28T21:03:43 MSK" duration-ms="0" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- isInputFieldNotEnabledBeforeClickEnableButtonTest -->
-        <test-method signature="isInputFieldEnabledAfterClickEnableButtonTest()[pri:0, instance:pages.heroku.DynamicControlsPageTest@6b1274d2]" started-at="2022-11-28T21:03:43 MSK" name="isInputFieldEnabledAfterClickEnableButtonTest" finished-at="2022-11-28T21:03:43 MSK" duration-ms="0" status="PASS">
+        <test-method signature="isInputFieldEnabledAfterClickEnableButtonTest()[pri:0, instance:pages.heroku.DynamicControlsPageTest@5a4aa2f2]" started-at="2022-12-05T21:19:10 MSK" name="isInputFieldEnabledAfterClickEnableButtonTest" finished-at="2022-12-05T21:19:10 MSK" duration-ms="0" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- isInputFieldEnabledAfterClickEnableButtonTest -->
-        <test-method signature="isCheckboxNotDisplayedAfterClickRemoveButtonTest()[pri:0, instance:pages.heroku.DynamicControlsPageTest@6b1274d2]" started-at="2022-11-28T21:03:43 MSK" name="isCheckboxNotDisplayedAfterClickRemoveButtonTest" finished-at="2022-11-28T21:03:43 MSK" duration-ms="0" status="PASS">
+        <test-method signature="isCheckboxNotDisplayedAfterClickRemoveButtonTest()[pri:0, instance:pages.heroku.DynamicControlsPageTest@5a4aa2f2]" started-at="2022-12-05T21:19:10 MSK" name="isCheckboxNotDisplayedAfterClickRemoveButtonTest" finished-at="2022-12-05T21:19:10 MSK" duration-ms="0" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- isCheckboxNotDisplayedAfterClickRemoveButtonTest -->
-        <test-method signature="isMessageAppearAfterClickEnableButtonTest()[pri:0, instance:pages.heroku.DynamicControlsPageTest@6b1274d2]" started-at="2022-11-28T21:03:43 MSK" name="isMessageAppearAfterClickEnableButtonTest" finished-at="2022-11-28T21:03:43 MSK" duration-ms="0" status="PASS">
+        <test-method signature="isInputFieldNotEnabledBeforeClickEnableButtonTest()[pri:0, instance:pages.heroku.DynamicControlsPageTest@5a4aa2f2]" started-at="2022-12-05T21:19:10 MSK" name="isInputFieldNotEnabledBeforeClickEnableButtonTest" finished-at="2022-12-05T21:19:10 MSK" duration-ms="0" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- isInputFieldNotEnabledBeforeClickEnableButtonTest -->
+        <test-method signature="isMessageAppearAfterClickEnableButtonTest()[pri:0, instance:pages.heroku.DynamicControlsPageTest@5a4aa2f2]" started-at="2022-12-05T21:19:10 MSK" name="isMessageAppearAfterClickEnableButtonTest" finished-at="2022-12-05T21:19:10 MSK" duration-ms="0" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- isMessageAppearAfterClickEnableButtonTest -->
-        <test-method signature="isMessageAppearAfterClickRemoveButtonTest()[pri:0, instance:pages.heroku.DynamicControlsPageTest@6b1274d2]" started-at="2022-11-28T21:03:43 MSK" name="isMessageAppearAfterClickRemoveButtonTest" finished-at="2022-11-28T21:03:43 MSK" duration-ms="0" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- isMessageAppearAfterClickRemoveButtonTest -->
-        <test-method is-config="true" signature="closeBrowser()[pri:0, instance:pages.heroku.DynamicControlsPageTest@6b1274d2]" started-at="2022-11-28T21:03:43 MSK" name="closeBrowser" finished-at="2022-11-28T21:03:43 MSK" duration-ms="655" status="PASS">
+        <test-method is-config="true" signature="closeBrowser()[pri:0, instance:pages.heroku.DynamicControlsPageTest@5a4aa2f2]" started-at="2022-12-05T21:19:10 MSK" name="closeBrowser" finished-at="2022-12-05T21:19:11 MSK" duration-ms="666" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- closeBrowser -->
+        <test-method signature="isMessageAppearAfterClickRemoveButtonTest()[pri:0, instance:pages.heroku.DynamicControlsPageTest@5a4aa2f2]" started-at="2022-12-05T21:19:10 MSK" name="isMessageAppearAfterClickRemoveButtonTest" finished-at="2022-12-05T21:19:10 MSK" duration-ms="0" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- isMessageAppearAfterClickRemoveButtonTest -->
       </class> <!-- pages.heroku.DynamicControlsPageTest -->
       <class name="pages.heroku.ContextMenuPageTest">
-        <test-method is-config="true" signature="setUp()[pri:0, instance:pages.heroku.ContextMenuPageTest@58fdd99]" started-at="2022-11-28T21:03:05 MSK" name="setUp" finished-at="2022-11-28T21:03:08 MSK" duration-ms="2891" status="PASS">
+        <test-method is-config="true" signature="setUp()[pri:0, instance:pages.heroku.ContextMenuPageTest@f0f2775]" started-at="2022-12-05T21:18:29 MSK" name="setUp" finished-at="2022-12-05T21:18:31 MSK" duration-ms="2407" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUp -->
-        <test-method signature="isAlertAppearAfterRightClickOnBoxTest()[pri:0, instance:pages.heroku.ContextMenuPageTest@58fdd99]" started-at="2022-11-28T21:03:08 MSK" name="isAlertAppearAfterRightClickOnBoxTest" finished-at="2022-11-28T21:03:11 MSK" duration-ms="2732" status="PASS">
+        <test-method signature="isAlertAppearAfterRightClickOnBoxTest()[pri:0, instance:pages.heroku.ContextMenuPageTest@f0f2775]" started-at="2022-12-05T21:18:31 MSK" name="isAlertAppearAfterRightClickOnBoxTest" finished-at="2022-12-05T21:18:34 MSK" duration-ms="2698" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- isAlertAppearAfterRightClickOnBoxTest -->
-        <test-method is-config="true" signature="closeBrowser()[pri:0, instance:pages.heroku.ContextMenuPageTest@58fdd99]" started-at="2022-11-28T21:03:11 MSK" name="closeBrowser" finished-at="2022-11-28T21:03:11 MSK" duration-ms="680" status="PASS">
+        <test-method is-config="true" signature="closeBrowser()[pri:0, instance:pages.heroku.ContextMenuPageTest@f0f2775]" started-at="2022-12-05T21:18:34 MSK" name="closeBrowser" finished-at="2022-12-05T21:18:34 MSK" duration-ms="625" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- closeBrowser -->
       </class> <!-- pages.heroku.ContextMenuPageTest -->
       <class name="pages.heroku.FileUploadPageTest">
-        <test-method is-config="true" signature="setUp()[pri:0, instance:pages.heroku.FileUploadPageTest@7bc1a03d]" started-at="2022-11-28T21:03:11 MSK" name="setUp" finished-at="2022-11-28T21:03:13 MSK" duration-ms="1597" status="PASS">
+        <test-method is-config="true" signature="setUp()[pri:0, instance:pages.heroku.FileUploadPageTest@6591f517]" started-at="2022-12-05T21:18:34 MSK" name="setUp" finished-at="2022-12-05T21:18:36 MSK" duration-ms="1496" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUp -->
-        <test-method signature="isFileUploadedAfterClickUploadButtonTest()[pri:0, instance:pages.heroku.FileUploadPageTest@7bc1a03d]" started-at="2022-11-28T21:03:13 MSK" name="isFileUploadedAfterClickUploadButtonTest" finished-at="2022-11-28T21:03:16 MSK" duration-ms="2757" status="PASS">
+        <test-method signature="isFileUploadedAfterClickUploadButtonTest()[pri:0, instance:pages.heroku.FileUploadPageTest@6591f517]" started-at="2022-12-05T21:18:36 MSK" name="isFileUploadedAfterClickUploadButtonTest" finished-at="2022-12-05T21:18:41 MSK" duration-ms="5527" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- isFileUploadedAfterClickUploadButtonTest -->
-        <test-method is-config="true" signature="closeBrowser()[pri:0, instance:pages.heroku.FileUploadPageTest@7bc1a03d]" started-at="2022-11-28T21:03:16 MSK" name="closeBrowser" finished-at="2022-11-28T21:03:16 MSK" duration-ms="623" status="PASS">
+        <test-method is-config="true" signature="closeBrowser()[pri:0, instance:pages.heroku.FileUploadPageTest@6591f517]" started-at="2022-12-05T21:18:41 MSK" name="closeBrowser" finished-at="2022-12-05T21:18:42 MSK" duration-ms="620" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- closeBrowser -->
       </class> <!-- pages.heroku.FileUploadPageTest -->
       <class name="pages.onliner.OnlinerHomePageTest">
-        <test-method is-config="true" signature="setUp()[pri:0, instance:pages.onliner.OnlinerHomePageTest@7364985f]" started-at="2022-11-28T21:03:16 MSK" name="setUp" finished-at="2022-11-28T21:03:18 MSK" duration-ms="1534" status="PASS">
+        <test-method is-config="true" signature="setUp()[pri:0, instance:pages.onliner.OnlinerHomePageTest@4d49af10]" started-at="2022-12-05T21:18:42 MSK" name="setUp" finished-at="2022-12-05T21:18:44 MSK" duration-ms="1493" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUp -->
-        <test-method signature="isCaptionOfProductEqualsProductNameInSearchFieldTest()[pri:0, instance:pages.onliner.OnlinerHomePageTest@7364985f]" started-at="2022-11-28T21:03:18 MSK" name="isCaptionOfProductEqualsProductNameInSearchFieldTest" finished-at="2022-11-28T21:03:26 MSK" duration-ms="7856" status="PASS">
+        <test-method signature="isCaptionOfProductEqualsProductNameInSearchFieldTest()[pri:0, instance:pages.onliner.OnlinerHomePageTest@4d49af10]" started-at="2022-12-05T21:18:44 MSK" name="isCaptionOfProductEqualsProductNameInSearchFieldTest" finished-at="2022-12-05T21:18:52 MSK" duration-ms="8882" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- isCaptionOfProductEqualsProductNameInSearchFieldTest -->
-        <test-method is-config="true" signature="closeBrowser()[pri:0, instance:pages.onliner.OnlinerHomePageTest@7364985f]" started-at="2022-11-28T21:03:26 MSK" name="closeBrowser" finished-at="2022-11-28T21:03:26 MSK" duration-ms="713" status="PASS">
+        <test-method is-config="true" signature="closeBrowser()[pri:0, instance:pages.onliner.OnlinerHomePageTest@4d49af10]" started-at="2022-12-05T21:18:52 MSK" name="closeBrowser" finished-at="2022-12-05T21:18:53 MSK" duration-ms="681" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- closeBrowser -->
       </class> <!-- pages.onliner.OnlinerHomePageTest -->
       <class name="pages.heroku.JavaScriptAlertsPageTest">
-        <test-method is-config="true" signature="setUp()[pri:0, instance:pages.heroku.JavaScriptAlertsPageTest@ba8d91c]" started-at="2022-11-28T21:03:43 MSK" name="setUp" finished-at="2022-11-28T21:03:45 MSK" duration-ms="1524" status="PASS">
+        <test-method is-config="true" signature="setUp()[pri:0, instance:pages.heroku.JavaScriptAlertsPageTest@429bd883]" started-at="2022-12-05T21:19:11 MSK" name="setUp" finished-at="2022-12-05T21:19:13 MSK" duration-ms="1475" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUp -->
-        <test-method is-config="true" signature="navigateToJavaScriptAlertsPageTest()[pri:0, instance:pages.heroku.JavaScriptAlertsPageTest@ba8d91c]" started-at="2022-11-28T21:03:45 MSK" name="navigateToJavaScriptAlertsPageTest" finished-at="2022-11-28T21:03:47 MSK" duration-ms="2529" status="PASS">
+        <test-method is-config="true" signature="navigateToJavaScriptAlertsPageTest()[pri:0, instance:pages.heroku.JavaScriptAlertsPageTest@429bd883]" started-at="2022-12-05T21:19:13 MSK" name="navigateToJavaScriptAlertsPageTest" finished-at="2022-12-05T21:19:15 MSK" duration-ms="2571" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- navigateToJavaScriptAlertsPageTest -->
-        <test-method signature="isActualMessageAfterClosingPromptContainInputDataTest()[pri:0, instance:pages.heroku.JavaScriptAlertsPageTest@ba8d91c]" started-at="2022-11-28T21:03:47 MSK" name="isActualMessageAfterClosingPromptContainInputDataTest" finished-at="2022-11-28T21:03:47 MSK" duration-ms="1" status="PASS">
+        <test-method signature="isActualMessageAfterClosingPromptContainInputDataTest()[pri:0, instance:pages.heroku.JavaScriptAlertsPageTest@429bd883]" started-at="2022-12-05T21:19:15 MSK" name="isActualMessageAfterClosingPromptContainInputDataTest" finished-at="2022-12-05T21:19:15 MSK" duration-ms="125" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- isActualMessageAfterClosingPromptContainInputDataTest -->
-        <test-method is-config="true" signature="closeBrowser()[pri:0, instance:pages.heroku.JavaScriptAlertsPageTest@ba8d91c]" started-at="2022-11-28T21:03:47 MSK" name="closeBrowser" finished-at="2022-11-28T21:03:48 MSK" duration-ms="615" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- closeBrowser -->
-        <test-method signature="isExpectedMessageEqualsActualAfterOkButtonTest()[pri:0, instance:pages.heroku.JavaScriptAlertsPageTest@ba8d91c]" started-at="2022-11-28T21:03:47 MSK" name="isExpectedMessageEqualsActualAfterOkButtonTest" finished-at="2022-11-28T21:03:47 MSK" duration-ms="0" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- isExpectedMessageEqualsActualAfterOkButtonTest -->
-        <test-method signature="isExpectedMessageEqualsActualAfterCancelButtonTest()[pri:0, instance:pages.heroku.JavaScriptAlertsPageTest@ba8d91c]" started-at="2022-11-28T21:03:47 MSK" name="isExpectedMessageEqualsActualAfterCancelButtonTest" finished-at="2022-11-28T21:03:47 MSK" duration-ms="0" status="PASS">
+        <test-method signature="isExpectedMessageEqualsActualAfterCancelButtonTest()[pri:0, instance:pages.heroku.JavaScriptAlertsPageTest@429bd883]" started-at="2022-12-05T21:19:15 MSK" name="isExpectedMessageEqualsActualAfterCancelButtonTest" finished-at="2022-12-05T21:19:15 MSK" duration-ms="94" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- isExpectedMessageEqualsActualAfterCancelButtonTest -->
+        <test-method signature="isExpectedMessageEqualsActualAfterOkButtonTest()[pri:0, instance:pages.heroku.JavaScriptAlertsPageTest@429bd883]" started-at="2022-12-05T21:19:15 MSK" name="isExpectedMessageEqualsActualAfterOkButtonTest" finished-at="2022-12-05T21:19:15 MSK" duration-ms="89" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- isExpectedMessageEqualsActualAfterOkButtonTest -->
+        <test-method is-config="true" signature="closeBrowser()[pri:0, instance:pages.heroku.JavaScriptAlertsPageTest@429bd883]" started-at="2022-12-05T21:19:15 MSK" name="closeBrowser" finished-at="2022-12-05T21:19:16 MSK" duration-ms="616" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- closeBrowser -->
       </class> <!-- pages.heroku.JavaScriptAlertsPageTest -->
       <class name="pages.heroku.FramesPageTest">
-        <test-method is-config="true" signature="setUp()[pri:0, instance:pages.heroku.FramesPageTest@70b0b186]" started-at="2022-11-28T21:03:26 MSK" name="setUp" finished-at="2022-11-28T21:03:28 MSK" duration-ms="1524" status="PASS">
+        <test-method is-config="true" signature="setUp()[pri:0, instance:pages.heroku.FramesPageTest@345965f2]" started-at="2022-12-05T21:18:53 MSK" name="setUp" finished-at="2022-12-05T21:18:55 MSK" duration-ms="1463" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUp -->
-        <test-method signature="isAlignCenterButtonEnabledTest()[pri:0, instance:pages.heroku.FramesPageTest@70b0b186]" started-at="2022-11-28T21:03:28 MSK" name="isAlignCenterButtonEnabledTest" finished-at="2022-11-28T21:03:31 MSK" duration-ms="3444" status="PASS">
+        <test-method signature="isAlignCenterButtonEnabledTest()[pri:0, instance:pages.heroku.FramesPageTest@345965f2]" started-at="2022-12-05T21:18:55 MSK" name="isAlignCenterButtonEnabledTest" finished-at="2022-12-05T21:18:59 MSK" duration-ms="4469" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- isAlignCenterButtonEnabledTest -->
-        <test-method is-config="true" signature="closeBrowser()[pri:0, instance:pages.heroku.FramesPageTest@70b0b186]" started-at="2022-11-28T21:03:31 MSK" name="closeBrowser" finished-at="2022-11-28T21:03:32 MSK" duration-ms="631" status="PASS">
+        <test-method is-config="true" signature="closeBrowser()[pri:0, instance:pages.heroku.FramesPageTest@345965f2]" started-at="2022-12-05T21:18:59 MSK" name="closeBrowser" finished-at="2022-12-05T21:19:00 MSK" duration-ms="640" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- closeBrowser -->

@@ -1,6 +1,7 @@
 package pages.heroku;
 
 import org.hamcrest.Matchers;
+import org.testng.Assert;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 import pages.CommonConditions;
@@ -10,41 +11,37 @@ import static org.hamcrest.MatcherAssert.assertThat;
 
 public class JavaScriptAlertsPageTest extends CommonConditions {
 
-    String actualMessageAfterOkButton;
-    String actualMessageAfterCancelButton;
-    String messageAfterClosingPromptWithInputData;
-
+    JavaScriptAlertsPage jsAlertsPage;
     @BeforeClass(alwaysRun = true)
     public void navigateToJavaScriptAlertsPageTest() {
-        JavaScriptAlertsPage jsAlertsPage = new JavaScriptAlertsPage(driver);
-        actualMessageAfterOkButton = jsAlertsPage.openPage()
-            .clickAlertButton()
-            .acceptAlert()
-            .getMessageAfterClosingAlert();
-        actualMessageAfterCancelButton = jsAlertsPage.clickConfirmButton()
-            .cancelAlert()
-            .getMessageAfterClosingAlert();
-        messageAfterClosingPromptWithInputData = jsAlertsPage.clickPromptButton()
-            .inputDataToAlert(IConstants.randomText)
-            .acceptAlert()
-            .getMessageAfterClosingAlert();
+        jsAlertsPage = new JavaScriptAlertsPage(driver);
+        jsAlertsPage.openPage();
     }
 
     @Test
     public void isExpectedMessageEqualsActualAfterOkButtonTest() {
+        String actualMessageAfterOkButton = jsAlertsPage.clickAlertButton()
+                .acceptAlert()
+            .getMessageAfterClosingAlert();
         assertThat(actualMessageAfterOkButton,
             Matchers.equalTo(IConstants.MessageAfterClickOkButtonInAlert));
     }
 
     @Test
     public void isExpectedMessageEqualsActualAfterCancelButtonTest() {
+        String actualMessageAfterCancelButton = jsAlertsPage.clickConfirmButton()
+            .cancelAlert()
+            .getMessageAfterClosingAlert();
         assertThat(actualMessageAfterCancelButton,
             Matchers.equalTo(IConstants.MessageAfterClickCancelButtonInAlert));
     }
 
     @Test
     public void isActualMessageAfterClosingPromptContainInputDataTest() {
-        assertThat("Actual message doesn`t contain input data",
-            messageAfterClosingPromptWithInputData.contains(IConstants.randomText));
+        String messageAfterClosingPromptWithInputData = jsAlertsPage.clickPromptButton()
+            .inputDataToAlert(IConstants.randomText)
+            .acceptAlert()
+            .getMessageAfterClosingAlert();
+        Assert.assertTrue(messageAfterClosingPromptWithInputData.contains(IConstants.randomText));
     }
 }

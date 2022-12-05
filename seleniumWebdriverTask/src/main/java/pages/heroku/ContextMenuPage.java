@@ -1,14 +1,17 @@
 package pages.heroku;
 
+import org.openqa.selenium.Alert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
-import utils.EnvironmentConfig;
+import pages.AbstractPage;
+import utils.TestProperties;
 
-public class ContextMenuPage {
+public class ContextMenuPage extends AbstractPage {
 
     protected WebDriver driver;
-    private static final String URL = EnvironmentConfig.herokuAppUrl + "context_menu";
+    private static final String URL = TestProperties.getHerokuAppUrl() + "context_menu";
     private static final By boxLocator = By.xpath("//div[@id='hot-spot']");
 
     public ContextMenuPage(WebDriver driver) {
@@ -20,17 +23,17 @@ public class ContextMenuPage {
         return this;
     }
 
-    public ContextMenuPage rightClickOnBox() {
+    public ContextMenuPage rightClickOnBoxElement() {
         Actions actions = new Actions(driver);
-        actions.contextClick(driver.findElement(boxLocator)).perform();
+        actions.contextClick(getWebElement(driver, boxLocator)).perform();
         return this;
     }
 
     public String getTextOfAlert() {
-        return driver.switchTo().alert().getText();
+        return switchToAlert(driver).getText();
     }
 
     public void closeAlert() {
-        driver.switchTo().alert().accept();
+        switchToAlert(driver).dismiss();
     }
 }

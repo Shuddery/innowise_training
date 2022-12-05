@@ -1,8 +1,9 @@
-utils\EnvironmentConfig.class
+utils\TestProperties.class
 pages\heroku\FramesPage.class
 pages\heroku\FileUploadPage.class
 waits\Waits.class
 pages\heroku\ContextMenuPage.class
+pages\AbstractPage.class
 utils\IConstants.class
 pages\heroku\JavaScriptAlertsPage.class
 driver\DriverSingleton.class

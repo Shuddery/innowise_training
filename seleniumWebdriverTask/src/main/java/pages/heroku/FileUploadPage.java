@@ -6,13 +6,14 @@ import java.net.URISyntaxException;
 import java.net.URL;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
-import utils.EnvironmentConfig;
+import pages.AbstractPage;
+import utils.TestProperties;
 import waits.Waits;
 
-public class FileUploadPage {
+public class FileUploadPage extends AbstractPage {
 
     protected WebDriver driver;
-    private static final String URL = EnvironmentConfig.herokuAppUrl + "upload";
+    private static final String URL = TestProperties.getHerokuAppUrl() + "upload";
     private static final By uploadFileInputLocator = By.xpath("//input[@id='file-upload']");
     private static final By uploadButtonLocator = By.xpath("//input[@id='file-submit']");
     private static final By uploadedFileLocator = By.xpath("//div[@id='uploaded-files']");
@@ -34,7 +35,7 @@ public class FileUploadPage {
     }
 
     public FileUploadPage chooseFileToUpload(String fileName) throws URISyntaxException {
-        driver.findElement(uploadFileInputLocator).sendKeys(getAbsolutePathOfFile(fileName));
+        getWebElement(driver, uploadFileInputLocator).sendKeys(getAbsolutePathOfFile(fileName));
         return this;
     }
 

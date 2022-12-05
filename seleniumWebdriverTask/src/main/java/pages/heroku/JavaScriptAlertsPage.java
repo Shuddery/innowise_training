@@ -2,13 +2,14 @@ package pages.heroku;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
-import utils.EnvironmentConfig;
+import pages.AbstractPage;
+import utils.TestProperties;
 import waits.Waits;
 
-public class JavaScriptAlertsPage {
+public class JavaScriptAlertsPage extends AbstractPage {
 
     protected WebDriver driver;
-    private static final String URL = EnvironmentConfig.herokuAppUrl + "javascript_alerts";
+    private static final String URL = TestProperties.getHerokuAppUrl() + "javascript_alerts";
     private static final By alertButtonLocator = By.xpath("//button[text()='Click for JS Alert']");
     private static final By confirmButtonLocator = By.xpath("//button[text()='Click for JS Confirm']");
     private static final By promptButtonLocator = By.xpath("//button[text()='Click for JS Prompt']");
@@ -28,32 +29,32 @@ public class JavaScriptAlertsPage {
     }
 
     public JavaScriptAlertsPage clickAlertButton() {
-        driver.findElement(alertButtonLocator).click();
+        getWebElement(driver, alertButtonLocator).click();
         return this;
     }
 
     public JavaScriptAlertsPage clickConfirmButton() {
-        driver.findElement(confirmButtonLocator).click();
+        getWebElement(driver, confirmButtonLocator).click();
         return this;
     }
 
     public JavaScriptAlertsPage clickPromptButton() {
-        driver.findElement(promptButtonLocator).click();
+        getWebElement(driver, promptButtonLocator).click();
         return this;
     }
 
     public JavaScriptAlertsPage acceptAlert() {
-        driver.switchTo().alert().accept();
+        switchToAlert(driver).accept();
         return this;
     }
 
     public JavaScriptAlertsPage cancelAlert() {
-        driver.switchTo().alert().dismiss();
+        switchToAlert(driver).dismiss();
         return this;
     }
 
     public JavaScriptAlertsPage inputDataToAlert(String text) {
-        driver.switchTo().alert().sendKeys(text);
+        switchToAlert(driver).sendKeys(text);
         return this;
     }
 }

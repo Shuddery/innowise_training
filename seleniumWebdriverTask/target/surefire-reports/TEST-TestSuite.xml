@@ -1,23 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="TestSuite" time="16.793" tests="12" errors="0" skipped="0" failures="0">
+<testsuite name="TestSuite" time="21.88" tests="12" errors="0" skipped="0" failures="0">
   <properties>
     <property name="java.runtime.name" value="Java(TM) SE Runtime Environment"/>
     <property name="java.vm.version" value="15.0.1+9-18"/>
     <property name="sun.boot.library.path" value="C:\Program Files\Java\jdk-15.0.1\bin"/>
     <property name="browser" value="chrome"/>
-    <property name="maven.multiModuleProjectDirectory" value="C:\Users\bobr_\IdeaProjects\login"/>
+    <property name="maven.multiModuleProjectDirectory" value="C:\Users\bobr_\OneDrive\Рабочий стол\innowise_training\seleniumWebdriverTask"/>
     <property name="java.vm.vendor" value="Oracle Corporation"/>
     <property name="java.vendor.url" value="https://java.oracle.com/"/>
     <property name="guice.disable.misplaced.annotation.check" value="true"/>
     <property name="path.separator" value=";"/>
     <property name="java.vm.name" value="Java HotSpot(TM) 64-Bit Server VM"/>
     <property name="sun.os.patch.level" value=""/>
-    <property name="env" value="config"/>
     <property name="user.script" value=""/>
     <property name="user.country" value="RU"/>
     <property name="sun.java.launcher" value="SUN_STANDARD"/>
     <property name="java.vm.specification.name" value="Java Virtual Machine Specification"/>
-    <property name="user.dir" value="C:\Users\bobr_\IdeaProjects\login"/>
+    <property name="user.dir" value="C:\Users\bobr_\OneDrive\Рабочий стол\innowise_training\seleniumWebdriverTask"/>
     <property name="java.vm.compressedOopsMode" value="32-bit"/>
     <property name="java.runtime.version" value="15.0.1+9-18"/>
     <property name="os.arch" value="amd64"/>
@@ -45,7 +44,7 @@
     <property name="java.class.path" value="C:\Users\bobr_\Downloads\apache-maven-3.6.3\bin\..\boot\plexus-classworlds-2.6.0.jar"/>
     <property name="java.vm.specification.version" value="15"/>
     <property name="sun.arch.data.model" value="64"/>
-    <property name="sun.java.command" value="org.codehaus.plexus.classworlds.launcher.Launcher -Dbrowser=chrome -Dsurefire.suiteXmlFiles=src\main\resources\testng.xml -Denv=config clean test"/>
+    <property name="sun.java.command" value="org.codehaus.plexus.classworlds.launcher.Launcher -Dbrowser=chrome -Dsurefire.suiteXmlFiles=src\main\resources\testng.xml clean test"/>
     <property name="java.home" value="C:\Program Files\Java\jdk-15.0.1"/>
     <property name="user.language" value="ru"/>
     <property name="java.specification.vendor" value="Oracle Corporation"/>
@@ -62,16 +61,16 @@
     <property name="sun.stdout.encoding" value="cp866"/>
     <property name="sun.cpu.isalist" value="amd64"/>
   </properties>
-  <testcase name="isAlertAppearAfterRightClickOnBoxTest" classname="pages.heroku.ContextMenuPageTest" time="2.733"/>
-  <testcase name="isFileUploadedAfterClickUploadButtonTest" classname="pages.heroku.FileUploadPageTest" time="2.758"/>
-  <testcase name="isCaptionOfProductEqualsProductNameInSearchFieldTest" classname="pages.onliner.OnlinerHomePageTest" time="7.858"/>
-  <testcase name="isAlignCenterButtonEnabledTest" classname="pages.heroku.FramesPageTest" time="3.444"/>
+  <testcase name="isAlertAppearAfterRightClickOnBoxTest" classname="pages.heroku.ContextMenuPageTest" time="2.695"/>
+  <testcase name="isFileUploadedAfterClickUploadButtonTest" classname="pages.heroku.FileUploadPageTest" time="5.527"/>
+  <testcase name="isCaptionOfProductEqualsProductNameInSearchFieldTest" classname="pages.onliner.OnlinerHomePageTest" time="8.882"/>
+  <testcase name="isAlignCenterButtonEnabledTest" classname="pages.heroku.FramesPageTest" time="4.469"/>
   <testcase name="isCheckboxNotDisplayedAfterClickRemoveButtonTest" classname="pages.heroku.DynamicControlsPageTest" time="0"/>
   <testcase name="isInputFieldEnabledAfterClickEnableButtonTest" classname="pages.heroku.DynamicControlsPageTest" time="0"/>
   <testcase name="isInputFieldNotEnabledBeforeClickEnableButtonTest" classname="pages.heroku.DynamicControlsPageTest" time="0"/>
   <testcase name="isMessageAppearAfterClickEnableButtonTest" classname="pages.heroku.DynamicControlsPageTest" time="0"/>
   <testcase name="isMessageAppearAfterClickRemoveButtonTest" classname="pages.heroku.DynamicControlsPageTest" time="0"/>
-  <testcase name="isActualMessageAfterClosingPromptContainInputDataTest" classname="pages.heroku.JavaScriptAlertsPageTest" time="0"/>
-  <testcase name="isExpectedMessageEqualsActualAfterCancelButtonTest" classname="pages.heroku.JavaScriptAlertsPageTest" time="0"/>
-  <testcase name="isExpectedMessageEqualsActualAfterOkButtonTest" classname="pages.heroku.JavaScriptAlertsPageTest" time="0"/>
+  <testcase name="isActualMessageAfterClosingPromptContainInputDataTest" classname="pages.heroku.JavaScriptAlertsPageTest" time="0.124"/>
+  <testcase name="isExpectedMessageEqualsActualAfterCancelButtonTest" classname="pages.heroku.JavaScriptAlertsPageTest" time="0.093"/>
+  <testcase name="isExpectedMessageEqualsActualAfterOkButtonTest" classname="pages.heroku.JavaScriptAlertsPageTest" time="0.09"/>
 </testsuite>

@@ -3,13 +3,14 @@ package pages.heroku;
 import org.openqa.selenium.By;
 import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.WebDriver;
-import utils.EnvironmentConfig;
+import pages.AbstractPage;
+import utils.TestProperties;
 import waits.Waits;
 
-public class DynamicControlsPage {
+public class DynamicControlsPage extends AbstractPage {
 
     protected WebDriver driver;
-    private static final String URL = EnvironmentConfig.herokuAppUrl + "dynamic_controls";
+    private static final String URL = TestProperties.getHerokuAppUrl() + "dynamic_controls";
     private static final By checkboxLocator = By.xpath("//div[@id='checkbox']/input");
     private static final By removeButtonLocator = By.xpath("//button[text()='Remove']");
     private static final By messageAfterClickOnRemoveButtonLocator = By.xpath("//form[@id='checkbox-example']/p");
@@ -43,18 +44,18 @@ public class DynamicControlsPage {
 
     public boolean isCheckboxDisplayed() {
         try {
-            return driver.findElement(checkboxLocator).isDisplayed();
+            return getWebElement(driver, checkboxLocator).isDisplayed();
         } catch (NoSuchElementException e) {
             return false;
         }
     }
 
     public boolean isInputFieldEnabled() {
-        return driver.findElement(inputFieldLocator).isEnabled();
+        return Waits.waitPresenceOfElementLocated(driver, inputFieldLocator).isEnabled();
     }
 
     public DynamicControlsPage clickEnableButton() {
-        driver.findElement(enableButtonLocator).click();
+        getWebElement(driver, enableButtonLocator).click();
         return this;
     }
 
