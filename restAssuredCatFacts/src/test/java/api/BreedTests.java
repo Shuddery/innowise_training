@@ -3,14 +3,17 @@ package api;
 import api.enums.StatusCode;
 import api.models.BreedModel;
 import api.service.BreedService;
+import com.google.gson.Gson;
+import com.google.gson.reflect.TypeToken;
 import io.restassured.response.Response;
+import java.util.ArrayList;
 import java.util.List;
 import org.hamcrest.Matchers;
 import org.testng.annotations.Test;
 
 import static org.hamcrest.MatcherAssert.assertThat;
 
-public class BreedTests {
+public class BreedTests extends BaseApiTest{
     private final static int LIMIT = 5;
 
     @Test

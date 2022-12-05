@@ -12,13 +12,13 @@ public class BreedService extends AbstractService {
     public static Response getBreeds() {
         RequestSpecification requestSpecification = given()
             .basePath("breeds");
-        return client.factsResponse(Method.GET, requestSpecification);
+        return client.breedsResponse(Method.GET, requestSpecification);
     }
 
     public static Response getBreedsWithQueryLimitParameter(int limit) {
         RequestSpecification requestSpecification = given()
             .basePath("breeds")
             .queryParam("limit", limit);
-        return client.factsResponse(Method.GET, requestSpecification);
+        return client.breedsResponse(Method.GET, requestSpecification);
     }
 }

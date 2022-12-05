@@ -14,7 +14,7 @@ public class AppClient {
     }
 
     public Response breedsResponse(Method method, RequestSpecification requestSpec) {
-        requestSpec.baseUri("https://catfact.ninja/breeds")
+        requestSpec.baseUri("https://catfact.ninja/")
             .contentType(ContentType.JSON);
         return requestSpec.request(method);
     }

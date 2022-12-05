@@ -10,7 +10,7 @@ import org.testng.annotations.Test;
 
 import static org.hamcrest.MatcherAssert.assertThat;
 
-public class CatFactsTests {
+public class CatFactsTests extends BaseApiTest{
     private final static int MAX_LENGTH = 50;
     private final static int LIMIT = 3;
 
