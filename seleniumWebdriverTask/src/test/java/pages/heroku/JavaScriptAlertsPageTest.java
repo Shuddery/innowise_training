@@ -1,5 +1,6 @@
 package pages.heroku;
 
+import helpers.heroku.JavaScriptAlertsHelper;
 import org.hamcrest.Matchers;
 import org.testng.Assert;
 import org.testng.annotations.BeforeClass;
@@ -11,34 +12,34 @@ import static org.hamcrest.MatcherAssert.assertThat;
 
 public class JavaScriptAlertsPageTest extends CommonConditions {
 
-    JavaScriptAlertsPage jsAlertsPage;
+    JavaScriptAlertsHelper jsAlertsHelper;
     @BeforeClass(alwaysRun = true)
     public void navigateToJavaScriptAlertsPageTest() {
-        jsAlertsPage = new JavaScriptAlertsPage(driver);
-        jsAlertsPage.openPage();
+        jsAlertsHelper = new JavaScriptAlertsHelper(driver);
+        jsAlertsHelper.openPage();
     }
 
     @Test
     public void isExpectedMessageEqualsActualAfterOkButtonTest() {
-        String actualMessageAfterOkButton = jsAlertsPage.clickAlertButton()
+        String actualMessageAfterOkButton = jsAlertsHelper.clickAlertButton()
                 .acceptAlert()
             .getMessageAfterClosingAlert();
         assertThat(actualMessageAfterOkButton,
-            Matchers.equalTo(IConstants.MessageAfterClickOkButtonInAlert));
+            Matchers.equalTo(IConstants.messageAfterClickOkButtonInAlert));
     }
 
     @Test
     public void isExpectedMessageEqualsActualAfterCancelButtonTest() {
-        String actualMessageAfterCancelButton = jsAlertsPage.clickConfirmButton()
+        String actualMessageAfterCancelButton = jsAlertsHelper.clickConfirmButton()
             .cancelAlert()
             .getMessageAfterClosingAlert();
         assertThat(actualMessageAfterCancelButton,
-            Matchers.equalTo(IConstants.MessageAfterClickCancelButtonInAlert));
+            Matchers.equalTo(IConstants.messageAfterClickCancelButtonInAlert));
     }
 
     @Test
     public void isActualMessageAfterClosingPromptContainInputDataTest() {
-        String messageAfterClosingPromptWithInputData = jsAlertsPage.clickPromptButton()
+        String messageAfterClosingPromptWithInputData = jsAlertsHelper.clickPromptButton()
             .inputDataToAlert(IConstants.randomText)
             .acceptAlert()
             .getMessageAfterClosingAlert();

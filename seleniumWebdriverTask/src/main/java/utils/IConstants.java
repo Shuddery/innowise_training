@@ -7,7 +7,13 @@ public interface IConstants {
     String messageAfterClickOnEnableButton = "It's enabled!";
     String randomText = "adasdasda";
     String fileName = "test.txt";
-    String MessageAfterClickOkButtonInAlert = "You successfully clicked an alert";
-    String MessageAfterClickCancelButtonInAlert = "You clicked: Cancel";
+    String messageAfterClickOkButtonInAlert = "You successfully clicked an alert";
+    String messageAfterClickCancelButtonInAlert = "You clicked: Cancel";
     String productName = "Тостер";
+    String frameName = "mce_0_ifr";
+    String contextMenuEndpoint = "context_menu";
+    String dynamicControlsEndpoint = "dynamic_controls";
+    String uploadEndpoint = "upload";
+    String framesEndpoint = "frames";
+    String javascriptAlertsEndpoint = "javascript_alerts";
 }

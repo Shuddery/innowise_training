@@ -1,5 +1,6 @@
 package pages.heroku;
 
+import helpers.heroku.FramesHelper;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 import pages.CommonConditions;
@@ -11,13 +12,13 @@ public class FramesPageTest extends CommonConditions {
 
     @Test
     public void isAlignCenterButtonEnabledTest() {
-        FramesPage framesPage = new FramesPage(driver);
-        framesPage.openPage()
+        FramesHelper framesHelper = new FramesHelper(driver);
+        framesHelper.openPage()
             .clickIFrameLink()
             .switchToFrame()
             .inputDataIntoFrame(IConstants.randomText)
             .switchToDefaultFrame()
             .clickAlignCenterButton();
-        Assert.assertTrue(framesPage.isAlignCenterButtonEnabled());
+        Assert.assertTrue(framesHelper.isAlignCenterButtonEnabled());
     }
 }

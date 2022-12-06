@@ -1,5 +1,6 @@
 package pages.heroku;
 
+import helpers.heroku.FileUploadHelper;
 import java.net.URISyntaxException;
 import org.testng.annotations.Test;
 import pages.CommonConditions;
@@ -12,10 +13,10 @@ public class FileUploadPageTest extends CommonConditions {
 
     @Test
     public void isFileUploadedAfterClickUploadButtonTest() throws URISyntaxException {
-        FileUploadPage fileUploadPage = new FileUploadPage(driver);
-        fileUploadPage.openPage()
+        FileUploadHelper fileUploadHelper = new FileUploadHelper(driver);
+        fileUploadHelper.openPage()
             .chooseFileToUpload(IConstants.fileName)
             .clickUploadButton();
-        assertThat(fileUploadPage.getUploadedFileName(), Matchers.equalTo(IConstants.fileName));
+        assertThat(fileUploadHelper.getUploadedFileName(), Matchers.equalTo(IConstants.fileName));
     }
 }

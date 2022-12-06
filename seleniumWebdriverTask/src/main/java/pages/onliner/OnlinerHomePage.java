@@ -1,16 +1,13 @@
 package pages.onliner;
 
 import org.openqa.selenium.By;
-import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import pages.AbstractPage;
-import utils.TestProperties;
 import waits.Waits;
 
 public class OnlinerHomePage extends AbstractPage {
 
-    protected WebDriver driver;
-    private static final String URL = TestProperties.getOnlinerUrl();
     private static final By searchFieldLocator = By.xpath("//input[contains(@class, 'fast-search')]");
     private static final By iFrameLocator = By.xpath("//iframe[@class='modal-iframe']");
     private static final By firstProductNameLocator = By.xpath("(//div[contains(@class, 'product__title')]/a)[1]");
@@ -18,50 +15,27 @@ public class OnlinerHomePage extends AbstractPage {
     private static final By captionOfProductLocator = By.xpath("//h1[contains(@class, 'catalog')]");
     private static final By footerLogoLocator = By.xpath("//div[@class='footer-style__logo']");
 
-    public OnlinerHomePage(WebDriver driver) {
-        this.driver = driver;
+    public static WebElement getSearchField(WebDriver driver) {
+        return getWebElement(driver, searchFieldLocator);
     }
 
-    public OnlinerHomePage openPage() {
-        driver.get(URL);
-        return this;
+    public static WebElement getIFrame(WebDriver driver) {
+        return getWebElement(driver, iFrameLocator);
     }
 
-    public OnlinerHomePage fillSearchField(String criteria) {
-        getWebElement(driver, searchFieldLocator).sendKeys(criteria);
-        return this;
+    public static WebElement getFirstProductName(WebDriver driver) {
+        return Waits.waitVisibilityOfElementLocated(driver, firstProductNameLocator);
     }
 
-    public OnlinerHomePage switchToProductsFrame() {
-        driver.switchTo().frame(getWebElement(driver, iFrameLocator));
-        return this;
+    public static WebElement getCaptionOfProduct(WebDriver driver) {
+        return Waits.waitVisibilityOfElementLocated(driver, captionOfProductLocator);
     }
 
-    public String getFirstProductName() {
-        return Waits.waitVisibilityOfElementLocated(driver, firstProductNameLocator).getText();
+    public static WebElement getSearchFieldInFrame(WebDriver driver) {
+        return Waits.waitVisibilityOfElementLocated(driver, searchFieldInFrameLocator);
     }
 
-    public OnlinerHomePage clearSearchFieldInFrame() {
-        getWebElement(driver, searchFieldInFrameLocator).clear();
-        return this;
-    }
-
-    public OnlinerHomePage fillSearchFieldInFrame(String criteria) {
-        getWebElement(driver, searchFieldInFrameLocator).sendKeys(criteria);
-        return this;
-    }
-
-    public void clickOnFirstProduct() {
-        getWebElement(driver, firstProductNameLocator).click();
-    }
-
-    public String getCaptionOfFirstProduct() {
-         return getWebElement(driver, captionOfProductLocator).getText();
-    }
-
-    public OnlinerHomePage scrollToEndOfPage() {
-        JavascriptExecutor js = (JavascriptExecutor) driver;
-        js.executeScript("arguments[0].scrollIntoView();", Waits.waitVisibilityOfElementLocated(driver, footerLogoLocator));
-        return this;
+    public static WebElement getFooterLogo(WebDriver driver) {
+        return Waits.waitPresenceOfElementLocated(driver, footerLogoLocator);
     }
  }

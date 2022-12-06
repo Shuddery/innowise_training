@@ -1,16 +1,13 @@
 package pages.heroku;
 
 import org.openqa.selenium.By;
-import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import pages.AbstractPage;
-import utils.TestProperties;
 import waits.Waits;
 
 public class DynamicControlsPage extends AbstractPage {
 
-    protected WebDriver driver;
-    private static final String URL = TestProperties.getHerokuAppUrl() + "dynamic_controls";
     private static final By checkboxLocator = By.xpath("//div[@id='checkbox']/input");
     private static final By removeButtonLocator = By.xpath("//button[text()='Remove']");
     private static final By messageAfterClickOnRemoveButtonLocator = By.xpath("//form[@id='checkbox-example']/p");
@@ -18,48 +15,27 @@ public class DynamicControlsPage extends AbstractPage {
     private static final By enableButtonLocator = By.xpath("//button[text()='Enable']");
     private static final By messageAfterClickOnEnableButtonLocator = By.xpath("//form[@id='input-example']/p");
 
-
-    public DynamicControlsPage(WebDriver driver) {
-        this.driver = driver;
+    public static WebElement getCheckbox(WebDriver driver){
+        return getWebElement(driver, checkboxLocator);
     }
 
-    public DynamicControlsPage openPage() {
-        driver.get(URL);
-        return this;
+    public static WebElement getRemoveButton(WebDriver driver){
+        return Waits.waitElementToBeClickable(driver, removeButtonLocator);
     }
 
-    public DynamicControlsPage clickOnCheckbox() {
-        Waits.waitElementToBeClickable(driver, checkboxLocator).click();
-        return this;
+    public static WebElement getMessageAfterClickOnRemoveButtonLocator(WebDriver driver){
+        return Waits.waitVisibilityOfElementLocated(driver, messageAfterClickOnRemoveButtonLocator);
     }
 
-    public DynamicControlsPage clickRemoveButton() {
-        Waits.waitElementToBeClickable(driver, removeButtonLocator).click();
-        return this;
+    public static WebElement getEnableButton(WebDriver driver){
+        return Waits.waitElementToBeClickable(driver, enableButtonLocator);
     }
 
-    public String getTextOfMessageAfterClickRemoveButton() {
-        return Waits.waitVisibilityOfElementLocated(driver, messageAfterClickOnRemoveButtonLocator).getText();
+    public static WebElement getMessageAfterClickOnEnableButtonLocator(WebDriver driver){
+        return Waits.waitVisibilityOfElementLocated(driver, messageAfterClickOnEnableButtonLocator);
     }
 
-    public boolean isCheckboxDisplayed() {
-        try {
-            return getWebElement(driver, checkboxLocator).isDisplayed();
-        } catch (NoSuchElementException e) {
-            return false;
-        }
-    }
-
-    public boolean isInputFieldEnabled() {
-        return Waits.waitPresenceOfElementLocated(driver, inputFieldLocator).isEnabled();
-    }
-
-    public DynamicControlsPage clickEnableButton() {
-        getWebElement(driver, enableButtonLocator).click();
-        return this;
-    }
-
-    public String getTextOfMessageAfterClickEnableButton() {
-        return Waits.waitVisibilityOfElementLocated(driver, messageAfterClickOnEnableButtonLocator).getText();
+    public static WebElement getInputField(WebDriver driver){
+        return Waits.waitPresenceOfElementLocated(driver, inputFieldLocator);
     }
 }

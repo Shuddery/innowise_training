@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="TestSuite" time="21.88" tests="12" errors="0" skipped="0" failures="0">
+<testsuite name="TestSuite" time="17.949" tests="12" errors="0" skipped="0" failures="0">
   <properties>
     <property name="java.runtime.name" value="Java(TM) SE Runtime Environment"/>
     <property name="java.vm.version" value="15.0.1+9-18"/>
@@ -61,16 +61,16 @@
     <property name="sun.stdout.encoding" value="cp866"/>
     <property name="sun.cpu.isalist" value="amd64"/>
   </properties>
-  <testcase name="isAlertAppearAfterRightClickOnBoxTest" classname="pages.heroku.ContextMenuPageTest" time="2.695"/>
-  <testcase name="isFileUploadedAfterClickUploadButtonTest" classname="pages.heroku.FileUploadPageTest" time="5.527"/>
-  <testcase name="isCaptionOfProductEqualsProductNameInSearchFieldTest" classname="pages.onliner.OnlinerHomePageTest" time="8.882"/>
-  <testcase name="isAlignCenterButtonEnabledTest" classname="pages.heroku.FramesPageTest" time="4.469"/>
+  <testcase name="isAlertAppearAfterRightClickOnBoxTest" classname="pages.heroku.ContextMenuPageTest" time="3.102"/>
+  <testcase name="isFileUploadedAfterClickUploadButtonTest" classname="pages.heroku.FileUploadPageTest" time="3.175"/>
+  <testcase name="isCaptionOfProductEqualsProductNameInSearchFieldTest" classname="pages.onliner.OnlinerHomePageTest" time="7.224"/>
+  <testcase name="isAlignCenterButtonEnabledTest" classname="pages.heroku.FramesPageTest" time="4.143"/>
   <testcase name="isCheckboxNotDisplayedAfterClickRemoveButtonTest" classname="pages.heroku.DynamicControlsPageTest" time="0"/>
   <testcase name="isInputFieldEnabledAfterClickEnableButtonTest" classname="pages.heroku.DynamicControlsPageTest" time="0"/>
   <testcase name="isInputFieldNotEnabledBeforeClickEnableButtonTest" classname="pages.heroku.DynamicControlsPageTest" time="0"/>
   <testcase name="isMessageAppearAfterClickEnableButtonTest" classname="pages.heroku.DynamicControlsPageTest" time="0"/>
   <testcase name="isMessageAppearAfterClickRemoveButtonTest" classname="pages.heroku.DynamicControlsPageTest" time="0"/>
-  <testcase name="isActualMessageAfterClosingPromptContainInputDataTest" classname="pages.heroku.JavaScriptAlertsPageTest" time="0.124"/>
-  <testcase name="isExpectedMessageEqualsActualAfterCancelButtonTest" classname="pages.heroku.JavaScriptAlertsPageTest" time="0.093"/>
-  <testcase name="isExpectedMessageEqualsActualAfterOkButtonTest" classname="pages.heroku.JavaScriptAlertsPageTest" time="0.09"/>
+  <testcase name="isActualMessageAfterClosingPromptContainInputDataTest" classname="pages.heroku.JavaScriptAlertsPageTest" time="0.129"/>
+  <testcase name="isExpectedMessageEqualsActualAfterCancelButtonTest" classname="pages.heroku.JavaScriptAlertsPageTest" time="0.089"/>
+  <testcase name="isExpectedMessageEqualsActualAfterOkButtonTest" classname="pages.heroku.JavaScriptAlertsPageTest" time="0.087"/>
 </testsuite>

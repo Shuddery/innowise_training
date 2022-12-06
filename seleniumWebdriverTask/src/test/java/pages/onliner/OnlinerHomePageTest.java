@@ -1,5 +1,6 @@
 package pages.onliner;
 
+import helpers.onliner.OnlinerHomeHelper;
 import org.hamcrest.Matchers;
 import org.testng.annotations.Test;
 import pages.CommonConditions;
@@ -11,14 +12,14 @@ public class OnlinerHomePageTest extends CommonConditions {
 
     @Test
     public void isCaptionOfProductEqualsProductNameInSearchFieldTest() {
-        OnlinerHomePage onlinerHomePage = new OnlinerHomePage(driver);
-        String firstProductName = onlinerHomePage.openPage()
+        OnlinerHomeHelper onlinerHomeHelper = new OnlinerHomeHelper(driver);
+        String firstProductName = onlinerHomeHelper.openPage()
             .fillSearchField(IConstants.productName)
             .switchToProductsFrame()
             .getFirstProductName();
-        onlinerHomePage.clearSearchFieldInFrame()
+        onlinerHomeHelper.clearSearchFieldInFrame()
             .fillSearchFieldInFrame(firstProductName)
             .clickOnFirstProduct();
-        assertThat(firstProductName, Matchers.equalTo(onlinerHomePage.getCaptionOfFirstProduct()));
+        assertThat(firstProductName, Matchers.equalTo(onlinerHomeHelper.getCaptionOfFirstProduct()));
     }
 }

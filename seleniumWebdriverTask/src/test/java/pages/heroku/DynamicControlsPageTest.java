@@ -1,5 +1,6 @@
 package pages.heroku;
 
+import helpers.heroku.DynamicControlsHelper;
 import org.hamcrest.Matchers;
 import org.testng.Assert;
 import org.testng.annotations.BeforeClass;
@@ -19,16 +20,16 @@ public class DynamicControlsPageTest extends CommonConditions {
 
     @BeforeClass(alwaysRun = true)
     public void navigateToDynamicControlsPageTest() {
-        DynamicControlsPage dynamicControlsPage = new DynamicControlsPage(driver);
-        actualMessageAfterRemoveButton = dynamicControlsPage.openPage()
+        DynamicControlsHelper dynamicControlsHelper = new DynamicControlsHelper(driver);
+        actualMessageAfterRemoveButton = dynamicControlsHelper.openPage()
             .clickOnCheckbox()
             .clickRemoveButton()
             .getTextOfMessageAfterClickRemoveButton();
-        isCheckboxDisplayed = dynamicControlsPage.isCheckboxDisplayed();
-        isInputFieldEnabledBeforeClickEnableButton = dynamicControlsPage.isInputFieldEnabled();
-        actualMessageAfterEnableButton = dynamicControlsPage.clickEnableButton()
+        isCheckboxDisplayed = dynamicControlsHelper.isCheckboxDisplayed();
+        isInputFieldEnabledBeforeClickEnableButton = dynamicControlsHelper.isInputFieldEnabled();
+        actualMessageAfterEnableButton = dynamicControlsHelper.clickEnableButton()
             .getTextOfMessageAfterClickEnableButton();
-        isInputFieldEnabledAfterClickEnableButton = dynamicControlsPage.isInputFieldEnabled();
+        isInputFieldEnabledAfterClickEnableButton = dynamicControlsHelper.isInputFieldEnabled();
     }
 
     @Test

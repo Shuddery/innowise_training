@@ -5,32 +5,28 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="42874d72-1568-41a2-92b1-557b52facf18" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/utils/TestProperties.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pages/AbstractPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pages/AbstractPage.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/pages/heroku/ContextMenuPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pages/heroku/ContextMenuPage.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/pages/heroku/DynamicControlsPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pages/heroku/DynamicControlsPage.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/pages/heroku/FileUploadPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pages/heroku/FileUploadPage.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/pages/heroku/FramesPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pages/heroku/FramesPage.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/pages/heroku/JavaScriptAlertsPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pages/heroku/JavaScriptAlertsPage.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/pages/onliner/OnlinerHomePage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pages/onliner/OnlinerHomePage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/utils/EnvironmentConfig.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/waits/Waits.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/waits/Waits.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/testng.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/testng.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/utils/IConstants.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/utils/IConstants.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/pages/heroku/ContextMenuPageTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/pages/heroku/ContextMenuPageTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/pages/heroku/DynamicControlsPageTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/pages/heroku/DynamicControlsPageTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/pages/heroku/FileUploadPageTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/pages/heroku/FileUploadPageTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/pages/heroku/FramesPageTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/pages/heroku/FramesPageTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/pages/heroku/JavaScriptAlertsPageTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/pages/heroku/JavaScriptAlertsPageTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/pages/onliner/OnlinerHomePageTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/pages/onliner/OnlinerHomePageTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/pages/heroku/ContextMenuPage.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/pages/heroku/ContextMenuPage.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/pages/heroku/DynamicControlsPage.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/pages/heroku/DynamicControlsPage.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/pages/heroku/FileUploadPage.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/pages/heroku/FileUploadPage.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/pages/heroku/FramesPage.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/pages/heroku/FramesPage.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/pages/heroku/JavaScriptAlertsPage.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/pages/heroku/JavaScriptAlertsPage.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/pages/onliner/OnlinerHomePage.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/pages/onliner/OnlinerHomePage.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/testng.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/testng.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/utils/EnvironmentConfig.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/waits/Waits.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/waits/Waits.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/inputFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/inputFiles.lst" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/surefire-reports/TEST-TestSuite.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/TEST-TestSuite.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/surefire-reports/TestSuite.txt" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/TestSuite.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/surefire-reports/emailable-report.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/emailable-report.html" afterDir="false" />
@@ -134,6 +130,7 @@
       <workItem from="1669546735899" duration="7687000" />
       <workItem from="1669647208836" duration="8935000" />
       <workItem from="1670242183764" duration="16153000" />
+      <workItem from="1670341450391" duration="13806000" />
     </task>
     <servers />
   </component>
