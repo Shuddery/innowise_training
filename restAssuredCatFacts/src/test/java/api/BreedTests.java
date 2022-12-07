@@ -1,35 +1,32 @@
 package api;
 
 import api.enums.StatusCode;
-import api.models.BreedModel;
+import api.models.BreedsModel;
 import api.service.BreedService;
-import com.google.gson.Gson;
-import com.google.gson.reflect.TypeToken;
 import io.restassured.response.Response;
-import java.util.ArrayList;
-import java.util.List;
 import org.hamcrest.Matchers;
 import org.testng.annotations.Test;
+import utils.GsonUtils;
 
 import static org.hamcrest.MatcherAssert.assertThat;
 
-public class BreedTests extends BaseApiTest{
+public class BreedTests extends BaseApiTest {
     private final static int LIMIT = 5;
 
     @Test
     public void checkStatusCodeGetFactsTest(){
-        Response response = BreedService.getBreeds()
+        Response breedsResponse = BreedService.getBreeds()
             .then()
             .extract().response();
-        assertThat(response.statusCode(), Matchers.equalTo(StatusCode.OK.getCode()));
+        assertThat(breedsResponse.statusCode(), Matchers.equalTo(StatusCode.OK.getCode()));
     }
 
     @Test
     public void isSizeOfBreedsInResponseEqualsLimitInQueryParameterTest(){
-        List<BreedModel> breeds = BreedService.getBreedsWithQueryLimitParameter(LIMIT)
+        String allBreedsResponseBody = BreedService.getBreedsWithQueryLimitParameter(LIMIT)
             .then()
-            .extract().response()
-            .jsonPath().getList("data", BreedModel.class);
-        assertThat(breeds.size(), Matchers.equalTo(LIMIT));
+            .extract().body().asString();
+        BreedsModel responseBreeds = GsonUtils.fromJson(allBreedsResponseBody, BreedsModel.class);
+        assertThat(responseBreeds.getData().length, Matchers.equalTo(LIMIT));
     }
 }

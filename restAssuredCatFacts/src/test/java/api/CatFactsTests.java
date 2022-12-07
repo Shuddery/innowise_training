@@ -2,58 +2,61 @@ package api;
 
 import api.enums.StatusCode;
 import api.models.CatFactModel;
+import api.models.CatFactsModel;
 import api.service.CatFactService;
 import io.restassured.response.Response;
-import java.util.List;
+import java.util.Arrays;
 import org.hamcrest.Matchers;
 import org.testng.annotations.Test;
+import utils.GsonUtils;
 
 import static org.hamcrest.MatcherAssert.assertThat;
 
-public class CatFactsTests extends BaseApiTest{
+public class CatFactsTests extends BaseApiTest {
     private final static int MAX_LENGTH = 50;
     private final static int LIMIT = 3;
 
     @Test
     public void isLengthInResponseEqualsOrLessThanLengthInQueryParameterTest(){
-        Response response = CatFactService.getFactWithQueryLengthParameter(MAX_LENGTH)
+        Response factResponse = CatFactService.getFactWithQueryLengthParameter(MAX_LENGTH)
             .then()
             .extract().response();
-        CatFactModel model = AbstractService.getModel(response, CatFactModel.class);
+        CatFactModel model = AbstractService.getModel(factResponse, CatFactModel.class);
         assertThat(model.getLength(), Matchers.lessThanOrEqualTo(MAX_LENGTH));
     }
 
     @Test
     public void checkStatusCodeGetFactTest(){
-        Response response = CatFactService.getFact()
+        Response factResponse = CatFactService.getFact()
             .then()
             .extract().response();
-        assertThat(response.statusCode(), Matchers.equalTo(StatusCode.OK.getCode()));
+        assertThat(factResponse.statusCode(), Matchers.equalTo(StatusCode.OK.getCode()));
     }
 
     @Test
     public void checkStatusCodeGetFactsTest(){
-        Response response = CatFactService.getFacts()
+        Response factsResponse = CatFactService.getFacts()
             .then()
             .extract().response();
-        assertThat(response.statusCode(), Matchers.equalTo(StatusCode.OK.getCode()));
+        assertThat(factsResponse.statusCode(), Matchers.equalTo(StatusCode.OK.getCode()));
     }
 
     @Test
     public void areLengthsInResponseEqualsOrLessThanLengthInQueryParameterTest(){
-        List<CatFactModel> facts = CatFactService.getFactsWithQueryLengthParameter(MAX_LENGTH)
+        String allFactsResponseBody = CatFactService.getFactsWithQueryLengthParameter(MAX_LENGTH)
             .then()
-            .extract().response()
-            .jsonPath().getList("data", CatFactModel.class);
-        facts.forEach(x -> assertThat(x.getLength(), Matchers.lessThanOrEqualTo(MAX_LENGTH)));
+            .extract().body().asString();
+        CatFactsModel responseFacts = GsonUtils.fromJson(allFactsResponseBody, CatFactsModel.class);
+        Arrays.stream(responseFacts.getData()).forEach(x -> assertThat(x.getLength(),
+            Matchers.lessThanOrEqualTo(MAX_LENGTH)));
     }
 
     @Test
     public void isSizeOfFactsInResponseEqualsLimitInQueryParameterTest(){
-        List<CatFactModel> facts = CatFactService.getFactsWithQueryLimitParameter(LIMIT)
+        String allFactsResponseBody = CatFactService.getFactsWithQueryLimitParameter(LIMIT)
             .then()
-            .extract().response()
-            .jsonPath().getList("data", CatFactModel.class);
-        assertThat(facts.size(), Matchers.equalTo(LIMIT));
+            .extract().body().asString();
+        CatFactsModel responseFacts = GsonUtils.fromJson(allFactsResponseBody, CatFactsModel.class);
+        assertThat(responseFacts.getData().length, Matchers.equalTo(LIMIT));
     }
 }
