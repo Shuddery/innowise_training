@@ -4,6 +4,7 @@ import api.enums.StatusCode;
 import api.models.CatFactModel;
 import api.models.CatFactsModel;
 import api.service.CatFactService;
+import io.qameta.allure.Description;
 import io.restassured.response.Response;
 import java.util.Arrays;
 import org.hamcrest.Matchers;
@@ -16,6 +17,7 @@ public class CatFactsTests extends BaseApiTest {
     private final static int MAX_LENGTH = 50;
     private final static int LIMIT = 3;
 
+    @Description("Check length of fact in response after get '/fact' request with max_length parameter")
     @Test
     public void isLengthInResponseEqualsOrLessThanLengthInQueryParameterTest(){
         Response factResponse = CatFactService.getFactWithQueryLengthParameter(MAX_LENGTH)
@@ -25,6 +27,7 @@ public class CatFactsTests extends BaseApiTest {
         assertThat(model.getLength(), Matchers.lessThanOrEqualTo(MAX_LENGTH));
     }
 
+    @Description("Check response status code after get '/fact' request")
     @Test
     public void checkStatusCodeGetFactTest(){
         Response factResponse = CatFactService.getFact()
@@ -33,6 +36,7 @@ public class CatFactsTests extends BaseApiTest {
         assertThat(factResponse.statusCode(), Matchers.equalTo(StatusCode.OK.getCode()));
     }
 
+    @Description("Check response status code after get '/facts' request")
     @Test
     public void checkStatusCodeGetFactsTest(){
         Response factsResponse = CatFactService.getFacts()
@@ -41,6 +45,7 @@ public class CatFactsTests extends BaseApiTest {
         assertThat(factsResponse.statusCode(), Matchers.equalTo(StatusCode.OK.getCode()));
     }
 
+    @Description("Check lengths of facts in response after get '/facts' request with max_length parameter")
     @Test
     public void areLengthsInResponseEqualsOrLessThanLengthInQueryParameterTest(){
         String allFactsResponseBody = CatFactService.getFactsWithQueryLengthParameter(MAX_LENGTH)
@@ -51,6 +56,7 @@ public class CatFactsTests extends BaseApiTest {
             Matchers.lessThanOrEqualTo(MAX_LENGTH)));
     }
 
+    @Description("Check amount of facts after get '/facts' request with limit parameter")
     @Test
     public void isSizeOfFactsInResponseEqualsLimitInQueryParameterTest(){
         String allFactsResponseBody = CatFactService.getFactsWithQueryLimitParameter(LIMIT)

@@ -1,9 +1,11 @@
 package api;
 
 import io.restassured.response.Response;
+import org.apache.log4j.Logger;
 
 public class AbstractService {
 
+    protected static final Logger log = Logger.getLogger(AbstractService.class);
     public static final String FACT_ENDPOINT = "fact";
     public static final String FACTS_ENDPOINT = "facts";
     public static final String BREEDS_ENDPOINT = "breeds";

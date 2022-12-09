@@ -1,0 +1,10 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+
+<suite name="test" verbose="1" >
+  <test name="All tests">
+    <classes>
+      <class name="api.CatFactsTests"/>
+      <class name="api.BreedTests"/>
+    </classes>
+  </test>
+</suite>
