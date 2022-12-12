@@ -6,7 +6,7 @@ import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 import org.testng.ITestListener;
 import org.testng.ITestResult;
-import utils.TestProperties;
+import utils.PropertyReader;
 
 public class TestListener implements ITestListener {
 
@@ -14,7 +14,7 @@ public class TestListener implements ITestListener {
     public void onTestFailure(ITestResult result) {
         Allure.getLifecycle().addAttachment("screenshot", "image/png", "png"
             ,((TakesScreenshot)DriverFactory
-                .getDriver(TestProperties.getChromeBrowser()))
+                .getDriver(PropertyReader.getChromeBrowser()))
                 .getScreenshotAs(OutputType.BYTES));
     }
 }

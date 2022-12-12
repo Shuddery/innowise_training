@@ -4,18 +4,11 @@ import builder.Credentials;
 import io.qameta.allure.Step;
 import org.openqa.selenium.WebDriver;
 import pages.LoginPage;
-import waits.IConstants;
 
 public class LoginHelper extends AbstractHelper {
 
     public LoginHelper(WebDriver driver) {
         super(driver);
-    }
-
-    @Step("Open heroku login page")
-    public LoginHelper openPage() {
-        openHerokuPage(IConstants.loginEndpoint);
-        return this;
     }
 
     @Step("Fill login field with username")
@@ -43,6 +36,13 @@ public class LoginHelper extends AbstractHelper {
     public LoginHelper clickLoginButton() {
         log.info("Click login button");
         LoginPage.getLoginButton(driver).click();
+        return this;
+    }
+
+    @Step("Click on logout button")
+    public LoginHelper clickLogoutButton() {
+        log.info("Click logout button");
+        LoginPage.getLogoutButton(driver).click();
         return this;
     }
 

@@ -16,30 +16,24 @@ import static org.hamcrest.MatcherAssert.assertThat;
 @Listeners(TestListener.class)
 public class LoginPageTest extends CommonConditions {
 
-    String messageWithEmptyPassword;
-    String messageWithCorrectData;
+    Credentials credentials = new Credentials.Builder().setLogin(IConstants.correctUsername)
+        .setPassword(IConstants.correctPassword)
+        .build();
+    LoginHelper loginHelper;
 
     @BeforeClass(alwaysRun = true)
     public void navigateToLoginPageTest() {
-        LoginHelper loginHelper = new LoginHelper(driver);
-        Credentials credentials = new Credentials.Builder().setLogin(IConstants.correctUsername)
-            .setPassword(IConstants.correctPassword)
-            .build();
-        messageWithEmptyPassword = loginHelper.openPage()
-            .fillLoginField(credentials)
-            .clickLoginButton()
-            .getMessageAfterCLickLoginButton();
-        messageWithCorrectData = loginHelper.clearLoginField()
-            .fillLoginField(credentials)
-            .fillPasswordField(credentials)
-            .clickLoginButton()
-            .getMessageAfterCLickLoginButton();
+        loginHelper = new LoginHelper(driver);
+        loginHelper.openHerokuPage(IConstants.loginEndpoint);
     }
 
     @Test
     @Owner("Galynin Vladislav")
     @Description("Checking error message text with empty password field")
     public void checkErrorMessageWithEmptyPasswordFieldTest() {
+        String messageWithEmptyPassword = loginHelper.fillLoginField(credentials)
+            .clickLoginButton()
+            .getMessageAfterCLickLoginButton();
         assertThat(messageWithEmptyPassword, Matchers.equalTo(IConstants.unsuccessfulLoginMessage));
     }
 
@@ -47,6 +41,12 @@ public class LoginPageTest extends CommonConditions {
     @Owner("Galynin Vladislav")
     @Description("Checking successful message text with correct credentials")
     public void checkMessageWithCorrectDataTest() {
+        String messageWithCorrectData = loginHelper.clearLoginField()
+            .fillLoginField(credentials)
+            .fillPasswordField(credentials)
+            .clickLoginButton()
+            .getMessageAfterCLickLoginButton();
+        loginHelper.clickLogoutButton();
         assertThat(messageWithCorrectData, Matchers.equalTo(IConstants.successfulLoginMessage));
     }
 }

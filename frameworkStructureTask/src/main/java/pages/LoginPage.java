@@ -10,7 +10,9 @@ public class LoginPage extends AbstractPage {
     private static final By loginFieldLocator = By.cssSelector("#username");
     private static final By passwordFieldLocator = By.cssSelector("#password");
     private static final By loginButtonLocator = By.cssSelector(".radius");
+    private static final By logoutButtonLocator = By.cssSelector(".button.radius");
     private static final By messageAfterClickLoginButtonLocator = By.cssSelector("#flash");
+
 
     public static WebElement getLoginField(WebDriver driver) {
         return getWebElement(driver, loginFieldLocator);
@@ -22,6 +24,10 @@ public class LoginPage extends AbstractPage {
 
     public static WebElement getLoginButton(WebDriver driver) {
         return Waits.waitElementToBeClickable(driver, loginButtonLocator);
+    }
+
+    public static WebElement getLogoutButton(WebDriver driver) {
+        return Waits.waitElementToBeClickable(driver, logoutButtonLocator);
     }
 
     public static WebElement getMessageAfterClickLoginButton(WebDriver driver) {

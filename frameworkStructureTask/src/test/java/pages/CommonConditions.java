@@ -4,7 +4,7 @@ import driver.DriverFactory;
 import org.openqa.selenium.WebDriver;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
-import utils.TestProperties;
+import utils.PropertyReader;
 
 public class CommonConditions {
 
@@ -12,7 +12,7 @@ public class CommonConditions {
 
     @BeforeClass()
     public void setUp() {
-        driver = DriverFactory.getDriver(TestProperties.getChromeBrowser());
+        driver = DriverFactory.getDriver(PropertyReader.getChromeBrowser());
     }
 
     @AfterClass(alwaysRun = true)
