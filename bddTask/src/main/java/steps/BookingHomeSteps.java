@@ -1,25 +1,23 @@
 package steps;
 
-import driver.DriverSingleton;
-import io.cucumber.java.After;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
-import org.openqa.selenium.WebDriver;
 import org.testng.Assert;
 import pages.BookingHomePage;
-import utils.TestProperties;
 
 public class BookingHomeSteps {
 
-    protected WebDriver driver = DriverSingleton.getDriver(TestProperties.getChromeBrowser());
-
-    BookingHomePage bookingHomePage = new BookingHomePage(driver);
-
-    @Given("user opens {string} using Chrome")
-    public void openBookingHomepage(String url) {
-        bookingHomePage.openPage(url);
+    private BaseSteps baseSteps;
+    BookingHomePage bookingHomePage;
+    public BookingHomeSteps(BaseSteps baseSteps) {
+        this.baseSteps = baseSteps;
+    }
+    @Given("user opens Booking page")
+    public void openBookingHomepage() {
+        bookingHomePage = new BookingHomePage(baseSteps.getDriver());
+        bookingHomePage.openPage();
     }
 
     @When("user fills search with {string}")
@@ -45,10 +43,5 @@ public class BookingHomeSteps {
     @And("amount of hotel stars equals {int}")
     public void amountOfStarsEquals(int expected) {
         Assert.assertEquals(bookingHomePage.getStarsAmountOfFirstFoundHotel(), expected);
-    }
-
-    @After
-    public void closeBrowser() {
-        DriverSingleton.closeDriver();
     }
 }

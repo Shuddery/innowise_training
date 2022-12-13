@@ -6,10 +6,10 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.opera.OperaDriver;
 
-public class DriverSingleton {
+public class DriverFactory {
     private static WebDriver driver;
 
-    private DriverSingleton() {}
+    private DriverFactory() {}
 
     public static WebDriver getDriver(String url) {
         if (driver == null) {

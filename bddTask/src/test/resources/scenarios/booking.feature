@@ -1,8 +1,8 @@
 Feature: Booking site
   Background: Booking page
-    Given user opens "https://www.booking.com/searchresults.en-gb.html" using Chrome
+    Given user opens Booking page
 
-  Scenario: user finds hotel
+  Scenario: User is able to search hotel by particular text/name
     When user fills search with "Turin Palace Hotel"
     And user chooses hotel in search list
     And user clicks search button

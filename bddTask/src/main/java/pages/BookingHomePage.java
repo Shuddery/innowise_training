@@ -2,6 +2,7 @@ package pages;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import utils.PropertyReader;
 import waits.Waits;
 
 public class BookingHomePage extends AbstractPage {
@@ -16,8 +17,8 @@ public class BookingHomePage extends AbstractPage {
         super(driver);
     }
 
-    public void openPage(String url) {
-        driver.get(url);
+    public void openPage() {
+        driver.get(PropertyReader.getBookingUrl());
     }
 
     public void fillSearchField(String hotelName) {
