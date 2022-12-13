@@ -1,0 +1,10 @@
+api\service\BreedService.class
+api\models\CatFactsModel.class
+api\AppClient.class
+api\models\BreedsModel.class
+api\AbstractService.class
+api\enums\StatusCode.class
+api\models\CatFactModel.class
+api\models\BreedModel.class
+utils\GsonUtils.class
+api\service\CatFactService.class

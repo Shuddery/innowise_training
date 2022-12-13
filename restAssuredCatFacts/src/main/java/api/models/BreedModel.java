@@ -4,6 +4,7 @@ import lombok.Data;
 
 @Data
 public class BreedModel {
+    
     private String breed;
     private String country;
     private String origin;
