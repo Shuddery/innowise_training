@@ -1,5 +1,6 @@
 FROM ubuntu:22.04
-COPY ./docker./fraweworkStructureTask .
+WORKDIR docker/
+COPY frameworkStructureTask/ docker/
 RUN apt update -y
 RUN apt install -y wget unzip
 RUN apt-get install -y sudo
