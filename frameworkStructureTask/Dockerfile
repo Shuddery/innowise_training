@@ -1,6 +1,6 @@
 FROM ubuntu:22.04
 WORKDIR docker/
-COPY . docker/
+COPY pom.xml docker/
 RUN apt update -y
 RUN apt install -y wget unzip
 RUN apt-get install -y sudo
