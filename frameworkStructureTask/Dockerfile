@@ -6,7 +6,5 @@ RUN apt update -y && \
     apt-get install -y sudo && \
     wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb && \
     sudo apt-get install -y ./google-chrome-stable_current_amd64.deb && \
-    sudo apt-get -y install maven && \
-    wget https://chromedriver.storage.googleapis.com/92.0.4515.107/chromedriver_linux64.zip && \
-    unzip chromedriver_linux64.zip
+    sudo apt-get -y install maven 
 RUN mvn clean verify
