@@ -9,4 +9,4 @@ RUN apt update -y && \
     sudo apt-get -y install maven 
     wget https://chromedriver.storage.googleapis.com/92.0.4515.107/chromedriver_linux64.zip && \
     unzip chromedriver_linux64.zip
-RUN mvn clean test
+RUN mvn clean verify
