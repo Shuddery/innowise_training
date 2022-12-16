@@ -1,11 +1,10 @@
 FROM ubuntu:22.04
-WORKDIR docker/
-COPY pom.xml docker/
-RUN apt update -y
-RUN apt install -y wget unzip
-RUN apt-get install -y sudo
-RUN wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
-RUN sudo apt-get install -y ./google-chrome-stable_current_amd64.deb
-RUN sudo apt-get -y install maven
-RUN ls -a
+WORKDIR /docker
+COPY ./pom.xml /docker
+RUN apt update -y && \
+    apt install -y wget unzip && \
+    apt-get install -y sudo && \
+    wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb && \
+    sudo apt-get install -y ./google-chrome-stable_current_amd64.deb && \
+    sudo apt-get -y install maven 
 RUN mvn clean verify
