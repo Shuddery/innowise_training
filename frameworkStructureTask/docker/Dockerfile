@@ -5,5 +5,5 @@ RUN apt-get install -y sudo
 RUN wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
 RUN sudo apt-get install -y ./google-chrome-stable_current_amd64.deb
 RUN sudo apt-get -y install maven
-WORKDIR ../frameworkStructureTask
+RUN cd /frameworkStructureTask
 RUN mvn clean verify
