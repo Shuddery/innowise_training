@@ -1,6 +1,6 @@
 FROM ubuntu:22.04
 WORKDIR /docker
-COPY ./pom.xml /docker
+COPY . /docker
 RUN apt update -y && \
     apt install -y wget unzip && \
     apt-get install -y sudo && \
