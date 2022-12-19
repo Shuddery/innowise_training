@@ -1,10 +1,10 @@
 package api;
 
-import api.enums.StatusCode;
 import api.models.BreedsModel;
 import api.service.BreedService;
 import io.qameta.allure.Description;
 import io.restassured.response.Response;
+import org.apache.http.HttpStatus;
 import org.hamcrest.Matchers;
 import org.testng.annotations.Test;
 import utils.GsonUtils;
@@ -20,7 +20,7 @@ public class BreedTests extends BaseApiTest {
         Response breedsResponse = BreedService.getBreeds()
             .then()
             .extract().response();
-        assertThat(breedsResponse.statusCode(), Matchers.equalTo(StatusCode.OK.getCode()));
+        assertThat(breedsResponse.statusCode(), Matchers.equalTo(HttpStatus.SC_OK));
     }
 
     @Description("Check amount of breeds after get '/breeds' request with limit parameter")

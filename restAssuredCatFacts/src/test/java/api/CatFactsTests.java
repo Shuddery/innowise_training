@@ -1,12 +1,12 @@
 package api;
 
-import api.enums.StatusCode;
 import api.models.CatFactModel;
 import api.models.CatFactsModel;
 import api.service.CatFactService;
 import io.qameta.allure.Description;
 import io.restassured.response.Response;
 import java.util.Arrays;
+import org.apache.http.HttpStatus;
 import org.hamcrest.Matchers;
 import org.testng.annotations.Test;
 import utils.GsonUtils;
@@ -33,7 +33,7 @@ public class CatFactsTests extends BaseApiTest {
         Response factResponse = CatFactService.getFact()
             .then()
             .extract().response();
-        assertThat(factResponse.statusCode(), Matchers.equalTo(StatusCode.OK.getCode()));
+        assertThat(factResponse.statusCode(), Matchers.equalTo(HttpStatus.SC_OK));
     }
 
     @Description("Check response status code after get '/facts' request")
@@ -42,7 +42,7 @@ public class CatFactsTests extends BaseApiTest {
         Response factsResponse = CatFactService.getFacts()
             .then()
             .extract().response();
-        assertThat(factsResponse.statusCode(), Matchers.equalTo(StatusCode.OK.getCode()));
+        assertThat(factsResponse.statusCode(), Matchers.equalTo(HttpStatus.SC_OK));
     }
 
     @Description("Check lengths of facts in response after get '/facts' request with max_length parameter")
