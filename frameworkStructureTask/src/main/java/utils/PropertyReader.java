@@ -20,16 +20,8 @@ public class PropertyReader {
         return properties.getProperty("herokuAppUrl");
     }
 
-    public static String getChromeBrowser() {
-        return properties.getProperty("chrome.browser");
-    }
-
-    public static String getOperaBrowser() {
-        return properties.getProperty("opera.browser");
-    }
-
-    public static String getFirefoxBrowser() {
-        return properties.getProperty("firefox.browser");
+    public static String getBrowser() {
+        return properties.getProperty("browser");
     }
 
     public static Integer getTimeoutSeconds() {

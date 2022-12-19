@@ -16,10 +16,10 @@ import static org.hamcrest.MatcherAssert.assertThat;
 @Listeners(TestListener.class)
 public class LoginPageTest extends CommonConditions {
 
-    Credentials credentials = new Credentials.Builder().setLogin(IConstants.correctUsername)
+    private final Credentials credentials = new Credentials.Builder().setLogin(IConstants.correctUsername)
         .setPassword(IConstants.correctPassword)
         .build();
-    LoginHelper loginHelper;
+    private LoginHelper loginHelper;
 
     @BeforeClass(alwaysRun = true)
     public void navigateToLoginPageTest() {

@@ -12,7 +12,7 @@ public class CommonConditions {
 
     @BeforeClass()
     public void setUp() {
-        driver = DriverFactory.getDriver(PropertyReader.getChromeBrowser());
+        driver = DriverFactory.getDriver(PropertyReader.getBrowser());
     }
 
     @AfterClass(alwaysRun = true)

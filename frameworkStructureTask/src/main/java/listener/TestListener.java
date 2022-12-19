@@ -14,7 +14,7 @@ public class TestListener implements ITestListener {
     public void onTestFailure(ITestResult result) {
         Allure.getLifecycle().addAttachment("screenshot", "image/png", "png"
             ,((TakesScreenshot)DriverFactory
-                .getDriver(PropertyReader.getChromeBrowser()))
+                .getDriver(PropertyReader.getBrowser()))
                 .getScreenshotAs(OutputType.BYTES));
     }
 }
