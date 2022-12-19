@@ -18,8 +18,8 @@ public class PropertyReader {
         return properties.getProperty("bookingUrl");
     }
 
-    public static String getChromeBrowser() {
-        return properties.getProperty("browser.chrome");
+    public static String getBrowser() {
+        return properties.getProperty("browser");
     }
 
     public static Integer getTimeoutSeconds() {

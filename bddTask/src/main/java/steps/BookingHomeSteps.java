@@ -7,16 +7,15 @@ import io.cucumber.java.en.When;
 import org.testng.Assert;
 import pages.BookingHomePage;
 
-public class BookingHomeSteps {
-
-    private BaseSteps baseSteps;
-    BookingHomePage bookingHomePage;
-    public BookingHomeSteps(BaseSteps baseSteps) {
-        this.baseSteps = baseSteps;
+public class BookingHomeSteps extends BaseSteps {
+    public BookingHomeSteps(CommonConditions commonConditions) {
+        super(commonConditions);
     }
+
+    BookingHomePage bookingHomePage = new BookingHomePage(driver);
+
     @Given("user opens Booking page")
     public void openBookingHomepage() {
-        bookingHomePage = new BookingHomePage(baseSteps.getDriver());
         bookingHomePage.openPage();
     }
 

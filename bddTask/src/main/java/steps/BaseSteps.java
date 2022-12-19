@@ -1,26 +1,11 @@
 package steps;
 
-import driver.DriverFactory;
-import io.cucumber.java.After;
-import io.cucumber.java.Before;
 import org.openqa.selenium.WebDriver;
-import utils.PropertyReader;
 
-public class BaseSteps {
+public abstract class BaseSteps {
 
     protected WebDriver driver;
-
-    @Before
-    public void setUp() {
-        driver = DriverFactory.getDriver(PropertyReader.getChromeBrowser());
-    }
-
-    @After
-    public void closeBrowser() {
-        DriverFactory.closeDriver();
-    }
-
-    public WebDriver getDriver() {
-        return driver;
+    public BaseSteps(CommonConditions commonConditions) {
+        this.driver = commonConditions.getDriver();
     }
 }
