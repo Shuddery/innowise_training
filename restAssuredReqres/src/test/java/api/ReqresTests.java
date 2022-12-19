@@ -1,166 +1,179 @@
 package api;
 
-import enums.StatusCode;
-import java.util.HashMap;
-import java.util.Map;
+import io.restassured.response.Response;
+import models.error.ErrorModel;
+import models.login.LoginResponseModel;
+import models.register.RegisterRequestModel;
+import models.register.RegisterResponseModel;
+import models.user.UserRequestModel;
+import models.resource.ResourceModel;
+import models.resource.SingleResourceModel;
+import models.user.UserPostResponseModel;
+import models.user.SingleUserModel;
+import models.user.UserModel;
+import models.user.UserUpdateResponseModel;
+import org.apache.http.HttpStatus;
+import org.hamcrest.Matchers;
 import org.testng.annotations.Test;
+import service.ReqresService;
 
-import static org.hamcrest.Matchers.equalTo;
+import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.Matchers.notNullValue;
 
 
-public class ReqresTests {
+public class ReqresTests extends BaseApiTest {
 
-    private final static String URL = "https://reqres.in/";
-    private final Map<String, String> user = new HashMap<>();
-    private final Map<String, String> register = new HashMap<>();
+    private static final int page = 2;
+    private static final int id = 2;
+    private static final int delay = 3;
 
-    @Test(description = "LIST USERS")
-    public void getListUsersTest() {
-        Specifications.installSpecifications(Specifications.requestSpec(URL),
-            Specifications.responseSpec(StatusCode.OK.getCode()));
-        Services.getRequest("api/users?page=2")
+    @Test
+    public void checkQueryParameterPageAfterGetListOfUsersTest() {
+        Response usersResponse = ReqresService.getListOfUsersWithQueryParameterPage(page)
             .then()
-            .body("data.id[0]", equalTo(7));
+            .extract().response();
+        UserModel userModel = AbstractService.getModel(usersResponse, UserModel.class);
+        assertThat(userModel.getPage(), Matchers.equalTo(page));
     }
 
-    @Test(description = "SINGLE USER")
-    public void getSingleUserTest() {
-        Specifications.installSpecifications(Specifications.requestSpec(URL),
-            Specifications.responseSpec(StatusCode.OK.getCode()));
-        Services.getRequest("api/users/2")
+    @Test
+    public void getSingleUserByIdTest() {
+        Response userResponse = ReqresService.getSingleUserById(id)
             .then()
-            .body("data.id", equalTo(2));
+            .extract().response();
+        SingleUserModel singleUserModel = AbstractService.getModel(userResponse, SingleUserModel.class);
+        assertThat(singleUserModel.getData().getId(), Matchers.equalTo(id));
     }
 
-    @Test(description = "SINGLE USER NOT FOUND")
-    public void getNonExistentUserTest() {
-        Specifications.installSpecifications(Specifications.requestSpec(URL),
-            Specifications.responseSpec(StatusCode.NOT_FOUND.getCode()));
-        Services.getRequest("api/users/23");
-    }
-
-    @Test(description = "LIST <RESOURCE>")
-    public void getListResourceTest() {
-        Specifications.installSpecifications(Specifications.requestSpec(URL),
-            Specifications.responseSpec(StatusCode.OK.getCode()));
-        Services.getRequest("api/unknown")
+    @Test
+    public void checkStatusCodeOfNonExistentUserTest() {
+        Response userResponse = ReqresService.getNonExistentSingleUser()
             .then()
-            .body("page", notNullValue())
-            .body("per_page", notNullValue())
-            .body("total", notNullValue());
+            .extract().response();
+        assertThat(userResponse.statusCode(), Matchers.equalTo(HttpStatus.SC_NOT_FOUND));
     }
 
-    @Test(description = "SINGLE <RESOURCE>")
-    public void getSingleResourceTest() {
-        Specifications.installSpecifications(Specifications.requestSpec(URL),
-            Specifications.responseSpec(StatusCode.OK.getCode()));
-        Services.getRequest("/api/unknown/2")
+    @Test
+    public void checkTotalFieldAfterGetListOfResourcesTest() {
+        Response resourcesResponse = ReqresService.getListOfResources()
             .then()
-            .body("data.id", equalTo(2));
+            .extract().response();
+        ResourceModel resourceModel = AbstractService.getModel(resourcesResponse, ResourceModel.class);
+        assertThat(resourceModel.getTotal(), Matchers.equalTo(12));
     }
 
-    @Test(description = "SINGLE <RESOURCE> NOT FOUND")
-    public void getNonExistentResourceTest() {
-        Specifications.installSpecifications(Specifications.requestSpec(URL),
-            Specifications.responseSpec(StatusCode.NOT_FOUND.getCode()));
-        Services.getRequest("api/unknown/23");
-    }
-
-    @Test(description = "CREATE")
-    public void createUserTest() {
-        Specifications.installSpecifications(Specifications.requestSpec(URL),
-            Specifications.responseSpec(StatusCode.CREATED.getCode()));
-        user.put("name", "morpheus");
-        user.put("job", "leader");
-        Services.postRequest("api/users", user)
+    @Test
+    public void getSingleResourceByIdTest() {
+        Response resourceResponse = ReqresService.getSingleResourceById(id)
             .then()
-            .body("name", equalTo("morpheus"))
-            .body("job", equalTo("leader"));
+            .extract().response();
+        SingleResourceModel singleResourceModel = AbstractService.getModel(resourceResponse, SingleResourceModel.class);
+        assertThat(singleResourceModel.getData().getId(), Matchers.equalTo(id));
     }
 
-    @Test(description = "UPDATE WITH PUT METHOD")
-    public void updateUserWithPutMethodTest() {
-        Specifications.installSpecifications(Specifications.requestSpec(URL),
-            Specifications.responseSpec(StatusCode.OK.getCode()));
-        user.put("name", "morpheus");
-        user.put("job", "zion resident");
-        Services.putRequest("api/users/2", user)
+    @Test
+    public void checkStatusCodeOfNonExistentResourceTest() {
+        Response resourceResponse = ReqresService.getNonExistentResource()
             .then()
-            .body("name", equalTo("morpheus"))
-            .body("job", equalTo("zion resident"));
+            .extract().response();
+        assertThat(resourceResponse.statusCode(), Matchers.equalTo(HttpStatus.SC_NOT_FOUND));
     }
 
-    @Test(description = "UPDATE WITH PATCH METHOD")
-    public void updateUserWithPatchMethodTest() {
-        Specifications.installSpecifications(Specifications.requestSpec(URL),
-            Specifications.responseSpec(StatusCode.OK.getCode()));
-        user.put("name", "morpheus");
-        user.put("job", "zion resident");
-        Services.patchRequest("api/users/2", user)
+    @Test
+    public void checkNameInUserResponseAfterCreateUserTest() {
+        UserRequestModel userRequestModel = new UserRequestModel();
+        userRequestModel.setName("morpheus");
+        userRequestModel.setJob("leader");
+        Response response = ReqresService.createUser(userRequestModel)
             .then()
-            .body("name", equalTo("morpheus"))
-            .body("job", equalTo("zion resident"));
+            .extract().response();
+        UserPostResponseModel userPostResponseModel = AbstractService.getModel(response, UserPostResponseModel.class);
+        assertThat(userPostResponseModel.getName(), Matchers.equalTo(userPostResponseModel.getName()));
     }
 
-    @Test(description = "DELETE")
-    public void deleteUserTest() {
-        Specifications.installSpecifications(Specifications.requestSpec(URL),
-            Specifications.responseSpec(StatusCode.NO_CONTENT.getCode()));
-        Services.deleteRequest("api/users/2");
-    }
-
-    @Test(description = "REGISTER - SUCCESSFUL")
-    public void checkSuccessfulRegisterTest() {
-        Specifications.installSpecifications(Specifications.requestSpec(URL),
-            Specifications.responseSpec(StatusCode.OK.getCode()));
-        register.put("email", "eve.holt@reqres.in");
-        register.put("password", "pistol");
-        Services.postRequest("api/register", register)
+    @Test
+    public void checkNameInUserResponseAfterUpdateUserWithPutMethodTest() {
+        UserRequestModel userRequestModel = new UserRequestModel();
+        userRequestModel.setName("morpheus");
+        userRequestModel.setJob("zion resident");
+        Response response = ReqresService.updateUserWithPutMethod(userRequestModel)
             .then()
-            .body("id", equalTo(4))
-            .body("token", equalTo("QpwL5tke4Pnpja7X4"));
+            .extract().response();
+        UserUpdateResponseModel userUpdateResponseModel = AbstractService.getModel(response, UserUpdateResponseModel.class);
+        assertThat(userUpdateResponseModel.getName(), Matchers.equalTo(userUpdateResponseModel.getName()));
     }
 
-    @Test(description = "REGISTER - UNSUCCESSFUL")
-    public void checkUnsuccessfulRegisterTest() {
-        Specifications.installSpecifications(Specifications.requestSpec(URL),
-            Specifications.responseSpec(StatusCode.BAD_REQUEST.getCode()));
-        register.put("email", "sydney@fife");
-        register.put("password", "");
-        Services.postRequest("api/register", register)
+    @Test
+    public void checkJobInUserResponseAfterUpdateUserWithPatchMethodTest() {
+        UserRequestModel userRequestModel = new UserRequestModel();
+        userRequestModel.setName("morpheus");
+        userRequestModel.setJob("zion resident");
+        Response response = ReqresService.updateUserWithPatchMethod(userRequestModel)
             .then()
-            .body("error", equalTo("Missing password"));
+            .extract().response();
+        UserUpdateResponseModel userUpdateResponseModel = AbstractService.getModel(response, UserUpdateResponseModel.class);
+        assertThat(userUpdateResponseModel.getJob(), Matchers.equalTo(userUpdateResponseModel.getJob()));
     }
 
-    @Test(description = "LOGIN - SUCCESSFUL")
-    public void checkSuccessfulLoginTest() {
-        Specifications.installSpecifications(Specifications.requestSpec(URL),
-            Specifications.responseSpec(StatusCode.OK.getCode()));
-        register.put("email", "eve.holt@reqres.in");
-        register.put("password", "cityslicka");
-        Services.postRequest("api/login", register)
+    @Test
+    public void checkStatusCodeAfterDeleteUserTest() {
+        Response userResponse = ReqresService.deleteUser()
             .then()
-            .body("token", equalTo("QpwL5tke4Pnpja7X4"));
+            .extract().response();
+        assertThat(userResponse.statusCode(), Matchers.equalTo(HttpStatus.SC_NO_CONTENT));
     }
 
-    @Test(description = "LOGIN - UNSUCCESSFUL")
-    public void checkUnsuccessfulLoginTest() {
-        Specifications.installSpecifications(Specifications.requestSpec(URL),
-            Specifications.responseSpec(StatusCode.BAD_REQUEST.getCode()));
-        register.put("email", "peter@klaven");
-        register.put("password", "");
-        Services.postRequest("api/login", register)
+    @Test
+    public void checkIdInRegisterResponseAfterRegisterUserTest() {
+        RegisterRequestModel registerRequestModel = new RegisterRequestModel();
+        registerRequestModel.setEmail("eve.holt@reqres.in");
+        registerRequestModel.setPassword("pistol");
+        Response response = ReqresService.registerUser(registerRequestModel)
             .then()
-            .body("error", equalTo("Missing password"));
+            .extract().response();
+        RegisterResponseModel registerResponseModel = AbstractService.getModel(response, RegisterResponseModel.class);
+        assertThat(registerResponseModel.getId(), Matchers.equalTo(4));
     }
 
-    @Test(description = "DELAYED RESPONSE")
-    public void getDelayedListUsersTest() {
-        Specifications.installSpecifications(Specifications.requestSpec(URL),
-            Specifications.responseSpec(StatusCode.OK.getCode()));
-        Services.getRequest("/api/users?delay=3")
+    @Test
+    public void checkErrorMessageAfterRegisterWithEmptyPasswordTest() {
+        RegisterRequestModel registerRequestModel = new RegisterRequestModel();
+        registerRequestModel.setEmail("sydney@fife");
+        Response response = ReqresService.registerUser(registerRequestModel)
             .then()
-            .body("data.id[0]", equalTo(1));
+            .extract().response();
+        ErrorModel errorModel = AbstractService.getModel(response, ErrorModel.class);
+        assertThat(errorModel.getError(), Matchers.equalTo("Missing password"));
+    }
+
+    @Test
+    public void checkTokenInLoginResponseAfterLoginUserTest() {
+        RegisterRequestModel registerRequestModel = new RegisterRequestModel();
+        registerRequestModel.setEmail("eve.holt@reqres.in");
+        registerRequestModel.setPassword("cityslicka");
+        Response response = ReqresService.loginInUser(registerRequestModel)
+            .then()
+            .extract().response();
+        LoginResponseModel loginResponseModel = AbstractService.getModel(response, LoginResponseModel.class);
+        assertThat(loginResponseModel.getToken(), Matchers.equalTo("QpwL5tke4Pnpja7X4"));
+    }
+
+    @Test
+    public void checkErrorMessageAfterLoginWithEmptyPasswordTest() {
+        RegisterRequestModel registerRequestModel = new RegisterRequestModel();
+        registerRequestModel.setEmail("peter@klaven");
+        Response response = ReqresService.loginInUser(registerRequestModel)
+            .then()
+            .extract().response();
+        ErrorModel errorModel = AbstractService.getModel(response, ErrorModel.class);
+        assertThat(errorModel.getError(), Matchers.equalTo("Missing password"));
+    }
+
+    @Test
+    public void checkStatusCodeAfterGetListOfUserWithDelayTest() {
+        Response usersResponse = ReqresService.getListOfUsersWithQueryParameterDelay(delay)
+            .then()
+            .extract().response();
+        assertThat(usersResponse.getStatusCode(), Matchers.equalTo(HttpStatus.SC_OK));
     }
 }
