@@ -19,6 +19,10 @@ public class PropertyReader {
         return properties.getProperty("intelyCareUrl");
     }
 
+    public static String getIntelyCareApiUrl() {
+        return properties.getProperty("intelyCareApiUrl");
+    }
+
     public static String getEmail() {
         return properties.getProperty("email");
     }
